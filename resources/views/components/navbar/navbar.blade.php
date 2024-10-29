@@ -1,7 +1,57 @@
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
+<nav class="justify-between gap-10 py-8 navbar text-secondary bg-red-50">
+    <div class="flex space-x-4">
+        <img src="../assets/images/polimedia-logo.png" width="50" alt="">
+        <h4 class="text-xl font-bold">Humas Polimedia</h4>
+    </div>
+    {{-- Navbar Desktop --}}
+    <div class="hidden space-x-4 lg:flex">
+        <ul class="px-1 text-lg menu menu-horizontal">
+            <li>
+                <x-navbar.nav-link href="{{ route('landing.index') }}" :active="request()->routeIs('landing.index')">
+                    Beranda
+                </x-navbar.nav-link>
+            </li>
+            <li>
+                <details onclick="toggleDetails(event)">
+                    <summary>Layanan</summary>
+                        <ul class="w-56 p-2">
+                            <li><a>Kunjungan Sekolah</a></li>
+                            <li><a>Info Magang</a></li>
+                        </ul>
+                </details>
+            </li>
+            <li>
+                <details onclick="toggleDetails(event)">
+                    <summary>Survey Kepuasaan</summary>
+                        <ul class="w-56 p-2">
+                            <li><a >Kunjungan Sekolah</a></li>
+                            <li><a>Orangtua Mahasiswa</a></li>
+                            <li><a>Magang</a></li>
+                        </ul>
+                </details>
+            </li>
+            <li>
+                <details onclick="toggleDetails(event)">
+                    <summary>Dokumentasi & Berita</summary>
+                        <ul class="w-56 p-2">
+                            <li><a>Berita Kegiatan</a></li>
+                            <li><a>Dokumentasi</a></li>
+                        </ul>
+                </details>
+            </li>
+            <li>
+                <x-navbar.nav-link href="{{ route('landing.hubungi-kami') }}" :active="request()->routeIs('landing.hubungi-kami')">
+                Hubungi Kami
+                </x-navbar.nav-link>
+            </li>
+        </ul>
+    </div>
+
+    {{-- Navbar Mobile --}}
+    <div class="flex lg:hidden">
+        <button class="btn btn-ghost btn-circle">
+            <ion-icon name="menu-outline" class="text-3xl"></ion-icon>
+        </button>
+    </div>
 </nav>
+

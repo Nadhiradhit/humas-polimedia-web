@@ -1,11 +1,11 @@
-<nav class="justify-between gap-10 py-8 navbar text-secondary bg-red-50">
-    <div class="flex space-x-4">
-        <img src="../assets/images/polimedia-logo.png" width="50" alt="">
-        <h4 class="text-xl font-bold">Humas Polimedia</h4>
+<nav class="justify-between gap-10 py-8 my-6 text-base bg-purple-100 rounded-full shadow navbar">
+    <div class="flex pl-4 space-x-4">
+        <img src="../assets/images/polimedia-logo.png" width="32" alt="">
+        <h4 class="text-lg font-bold">Humas Polimedia</h4>
     </div>
     {{-- Navbar Desktop --}}
-    <div class="hidden space-x-4 lg:flex">
-        <ul class="px-1 text-lg menu menu-horizontal">
+    <div class="hidden pr-4 space-x-4 lg:flex">
+        <ul class="px-1 text-base menu menu-horizontal">
             <li>
                 <x-navbar.nav-link href="{{ route('landing.index') }}" :active="request()->routeIs('landing.index')">
                     Beranda

@@ -1,4 +1,3 @@
-import theme from "tailwindcss/defaultTheme";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
@@ -11,6 +10,14 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
+        screens: {
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px",
+            "3xl": "1720px",
+        },
         extend: {
             fontFamily: {
                 plusJakarta: ["Plus Jakarta Sans"],
@@ -20,6 +27,21 @@ export default {
     },
     plugins: [require("daisyui")],
     daisyui: {
-        themes: ["light", "dark", "winter"],
+        themes: [
+            {
+                mytheme: {
+                    primary: "#cd99f6",
+                    secondary: "#ec8baa",
+                    accent: "#e45658",
+                    neutral: "#e5e7eb",
+                    "base-100": "#f9f4fd",
+                    info: "#e2c7f7",
+                    success: "#c4b5fd",
+                    warning: "#fef08a",
+                    error: "#fca5a5",
+                },
+            },
+            "light",
+        ],
     },
 };

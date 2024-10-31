@@ -49,7 +49,7 @@
                                 <span class="ml-2">Kelas XI</span>
                             </div>
                             <div class="flex items-center">
-                                <x-forms.form-radio name="student_class"  value="XII"required/>
+                                <x-forms.form-radio name="student_class"  value="XII" required/>
                                 <span class="ml-2">Kelas XII</span>
                             </div>
                         </div>

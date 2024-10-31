@@ -1,1 +1,1 @@
-<textarea class="w-full textarea textarea-bordered"></textarea>
+<textarea class="w-full textarea textarea-primary"></textarea>

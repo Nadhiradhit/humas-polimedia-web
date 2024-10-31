@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>@yield('title')</title>
 </head>
-<body class="w-full mx-auto max-w-screen-3xl font-plusJakarta">
+<body class="w-full px-6 mx-auto md:px-10 max-w-screen-3xl font-plusJakarta">
 
     <x-navbar.navbar />
 

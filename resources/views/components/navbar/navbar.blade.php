@@ -1,4 +1,4 @@
-<nav class="justify-between gap-10 py-8 my-6 text-base bg-purple-100 rounded-full shadow navbar">
+<nav class="relative justify-between gap-10 py-8 my-6 text-base bg-purple-100 rounded-full shadow navbar">
     <div class="flex pl-4 space-x-4">
         <img src="../assets/images/polimedia-logo.png" width="32" alt="">
         <h4 class="text-lg font-bold">Humas Polimedia</h4>
@@ -15,8 +15,8 @@
                 <details onclick="toggleDetails(event)">
                     <summary>Layanan</summary>
                         <ul class="w-56 p-2">
-                            <li><a>Kunjungan Sekolah</a></li>
-                            <li><a>Info Magang</a></li>
+                            <li><a href="{{ route('landing.kunjungan-sekolah')}}">Pengajuan Kunjungan Sekolah</a></li>
+                            <li><a href="{{ route('landing.pengajuan-magang')}}">Pengajuan Magang</a></li>
                         </ul>
                 </details>
             </li>
@@ -55,3 +55,4 @@
     </div>
 </nav>
 
+<x-navbar.navbar-mobile />

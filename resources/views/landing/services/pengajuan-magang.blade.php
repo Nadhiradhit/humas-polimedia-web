@@ -15,55 +15,68 @@
                         <label class="label">
                             <span class="text-lg font-semibold">Asal Sekolah</span>
                         </label>
-                        <x-forms.form-input name="name_school" id="name_school" type="text" placeholder="Tuliskan asal sekolah" />
+                        <x-forms.form-input name="name_school" id="name_school" type="text" placeholder="Tuliskan asal sekolah" required />
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
                             <span class="text-lg font-semibold">Jumlah Siswa</span>
                         </label>
-                        <x-forms.form-input name="total_student" id="total_student" type="text" placeholder="Tuliskan jumlah siswa" />
+                        <x-forms.form-input name="total_student" id="total_student" type="text" placeholder="Tuliskan jumlah siswa" required/>
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
                             <span class="text-lg font-semibold">Nama Lengkap Siswa</span>
                         </label>
-                        <x-forms.form-input name="name_student" id="name_student" type="text" placeholder="Tuliskan nama lengkap siswa" />
+                        <x-forms.form-input name="name_student" id="name_student" type="text" placeholder="Tuliskan nama lengkap siswa" required/>
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
                             <span class="text-lg font-semibold">Jurusan Sekolah</span>
                         </label>
-                        <x-forms.form-input name="majority_school" id="majority_school" type="text" placeholder="Tuliskan jurusan sekolah" />
+                        <x-forms.form-input name="majority_school" id="majority_school" type="text" placeholder="Tuliskan jurusan sekolah" required/>
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Kelas</span>
+                            <span class="text-lg font-semibold">Kelas Siswa</span>
                         </label>
-                        <x-forms.form-input name="student_class" id="stundet_class" type="text" placeholder="Tuliskan kelas sekolah" />
-                    </div>
-                    <div class="w-full form-control">
-                        <label class="label">
-                            <span class="text-lg font-semibold">Guru Pendamping</span>
-                        </label>
-                        <x-forms.form-input name="accompaying_teacher" id="accompaying_teacher" type="text" placeholder="Tuliskan guru pendamping sekolah" />
+                        <div class="flex space-x-4">
+                            <div class="flex items-center">
+                                <x-forms.form-radio name="student_class" value="X" required/>
+                                <span class="ml-2">Kelas X</span>
+                            </div>
+                            <div class="flex items-center">
+                                <x-forms.form-radio name="student_class"  value="XI" required/>
+                                <span class="ml-2">Kelas XI</span>
+                            </div>
+                            <div class="flex items-center">
+                                <x-forms.form-radio name="student_class"  value="XII"required/>
+                                <span class="ml-2">Kelas XII</span>
+                            </div>
+                        </div>
+                        <div class="w-full form-control">
+                            <label class="label">
+                                <span class="text-lg font-semibold">Guru Pendamping</span>
+                            </label>
+                            <x-forms.form-input name="accompaying_teacher" id="accompaying_teacher" type="text" placeholder="Tuliskan guru pendamping sekolah" required/>
+                        </div>
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
                             <span class="text-lg font-semibold">Pengajuan Tanggal Magang</span>
                         </label>
-                        <x-forms.form-date name="submision_date" id="submision_date"/>
+                        <x-forms.form-date name="submision_date" id="submision_date" required/>
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
                             <span class="text-lg font-semibold">Narahubung</span>
                         </label>
-                        <x-forms.form-input name="contact_person" id="contact_person" type="text" placeholder="Tuliskan guru pendamping sekolah" />
+                        <x-forms.form-input name="contact_person" id="contact_person" type="text" placeholder="Tuliskan guru pendamping sekolah" required/>
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
                             <span class="text-lg font-semibold">Surat Permohonan Magang</span>
                         </label>
-                        <x-forms.form-file name="letter_intership" id="letter_intership" placeholder="Tuliskan guru pendamping sekolah" />
+                        <x-forms.form-file name="letter_intership" id="letter_intership" placeholder="Tuliskan guru pendamping sekolah" required/>
                     </div>
                     <x-button.button>
                         Submit

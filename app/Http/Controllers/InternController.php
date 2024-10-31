@@ -28,7 +28,7 @@ class InternController extends Controller
             'total_student' => 'required',
             'name_student' => 'required',
             'majority_school' => 'required',
-            'student_class' => 'required',
+            'student_class' => 'required|in:X,XI,XII',
             'accompaying_teacher' => 'required',
             'submision_date' => 'required',
             'contact_person' => 'required',

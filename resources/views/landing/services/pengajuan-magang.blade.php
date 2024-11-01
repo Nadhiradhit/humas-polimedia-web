@@ -3,7 +3,7 @@
 <x-layouts.app-layout>
     <div class="flex flex-col mb-8 border-2 bg-base-100 rounded-2xl border-primary">
         <div class="w-full rounded-2xl">
-            <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full rounded-t-2xl h-[30rem] ">
+            <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full rounded-t-2xl h-[20rem] lg:h-[30rem] ">
         </div>
         <div class="px-8 py-4 text-slate-950">
             <h3 class="text-2xl font-bold">Form Pengajuan Magang</h3>

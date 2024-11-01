@@ -15,4 +15,5 @@ class LandingController extends Controller
     {
         return view('landing.hubungi-kami');
     }
+
 }

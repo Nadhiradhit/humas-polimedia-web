@@ -38,7 +38,7 @@ class InternController extends Controller
         $letter_file = $request->file('letter_intership');
         $file_ext = $letter_file->extension();
         $file_name = date('YmdHis') . "." . $file_ext;
-        $letter_file->move(public_path('storage/letter'), $file_name);
+        $letter_file->move(public_path('storage/letter/intern'), $file_name);
 
         $data = [
             'name_school' => $request->name_school,

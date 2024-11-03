@@ -1,4 +1,4 @@
-@section('title', 'Survey Kepuasaan Sekolah')
+@section('title', 'Survey Kepuasaan Magang')
 
 <x-layouts.app-layout>
     <div class="flex flex-col mb-8 border-2 bg-base-100 rounded-2xl border-primary">
@@ -6,7 +6,7 @@
             <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full rounded-t-2xl h-[20rem] lg:h-[30rem] ">
         </div>
         <div class="px-8 py-4 text-slate-950">
-            <h3 class="text-2xl font-bold">Form Kepuasan Kunjungan Sekolah</h3>
+            <h3 class="text-2xl font-bold">Form Kepuasan Magang</h3>
             <p class="text-lg font-semibold text-secondary">Survei ini dilakukan untuk mengetahui kepuasan Bapak/Ibu/Siswa/i terhadap pelayanan Humas  Polimedia. Kami sangat mengharapkan kerjasama dari Bapak/Ibu/Siswa/i untuk mengisi dan menjawab setiap pertanyaan yang diajukan. Atas perhatiannya kami ucapkan terima kasih.</p>
             <div class="pt-4">
                 <form action="{{ route('kunjungan.store') }}" method="POST" enctype="multipart/form-data">
@@ -19,16 +19,16 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Tanggal Pelaksanaan</span>
+                            <span class="text-lg font-semibold">Pelaksanaan Magang: (Bulan)</span>
                         </label>
-                        <x-forms.form-date name="submision_date" id="submision_date"/>
+                        <x-forms.form-input name="school_name" id="school_name" type="text" placeholder="Tuliskan durasi pelaksanaan magang" />
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Saya merasa senang dengan kegiatan kunjungan ini</span>
+                            <span class="text-lg font-semibold">Saya merasa senang mendapat kesempatan magang di Polimedia</span>
                         </label>
                         <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
-                            <div class="flex items-center w-">
+                            <div class="flex items-center">
                                 <x-forms.form-radio name="time_visit" id="time_visit"  value="09.00-10.00" />
                                 <span class="ml-2">Sangat Tidak Setuju</span>
                             </div>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Kunjungan ini sangat bermanfaat bagi para siswa/i yang sedang mencari referensi kampus
+                            <span class="text-lg font-semibold">Selama pelaksanaan magang, saya dilatih untuk mengasah skill, bekerja dalam tim, serta manajemen waktu
                             </span>
                         </label>
                         <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
@@ -80,7 +80,7 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Saya mendapatkan informasi tentang program studi yang ada di Polimedia
+                            <span class="text-lg font-semibold">Tim Humas sangat koperatif dalam menginformasikan prosedur magang kepada guru pendamping
                             </span>
                         </label>
                         <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
@@ -108,7 +108,7 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Narasumber menjelaskan materi dengan sangat jelas dan detail
+                            <span class="text-lg font-semibold">Saya berkontribusi sesuai keahlian saya saat melaksanakan magang
                             </span>
                         </label>
                         <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
@@ -136,7 +136,7 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Kunjungan ke beberapa tempat di Polimedia seperti kunjungan ke Perpustakaan, Laboratorium, Laboritarium Cetak, dsb membuat saya lebih memahami konsep industri kreatif
+                            <span class="text-lg font-semibold">Komunikasi guru pendamping dan tim Humas sangat baik
                             </span>
                         </label>
                         <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
@@ -164,7 +164,7 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Panitia penerimaan sangat ramah dan melayani dengan baik
+                            <span class="text-lg font-semibold">Tim Humas membimbing dan mengarahkan siswa/i magang dengan sangat baik
                         </label>
                         <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
                             <div class="flex items-center">
@@ -191,7 +191,7 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Durasi kunjungan sangat cukup untuk mendapatkan informasi baru tentang Polimedia
+                            <span class="text-lg font-semibold">Saya mendapatkan banyak pengalaman baru selama magang di Polimedia
                         </label>
                         <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
                             <div class="flex items-center">

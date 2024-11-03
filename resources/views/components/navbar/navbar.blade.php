@@ -24,9 +24,9 @@
                 <details onclick="toggleDetails(event)">
                     <summary>Survey Kepuasaan</summary>
                         <ul class="w-56 p-2">
-                            <li><a >Kunjungan Sekolah</a></li>
-                            <li><a>Orangtua Mahasiswa</a></li>
-                            <li><a>Magang</a></li>
+                            <li><a href="{{ route('landing.survey-kepuasan-sekolah') }}">Kunjungan Sekolah</a></li>
+                            <li><a href="{{ route('landing.survey-kepuasan-tamu') }}">Tamu</a></li>
+                            <li><a href="{{ route('landing.survey-kepuasan-magang') }}">Magang</a></li>
                         </ul>
                 </details>
             </li>

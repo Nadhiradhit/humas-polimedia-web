@@ -9,7 +9,7 @@ class SurveyValue extends Model
     public $surveyValue = [
         'Sangat Tidak Setuju',
         'Tidak Setuju',
-        'Netra/Ragu-Ragu',
+        'Netral/Ragu-Ragu',
         'Setuju',
         'Sangat Setuju'
     ];

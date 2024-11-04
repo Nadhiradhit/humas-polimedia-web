@@ -8,7 +8,7 @@ class SchoolSurvey extends Model
 {
     protected $table = 'survey_school';
     protected $fillable = [
-        'shool_name',
+        'school_name',
         'date_visit',
         'question_1',
         'question_2',

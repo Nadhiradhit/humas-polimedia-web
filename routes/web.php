@@ -19,8 +19,10 @@ Route::post('/pengajuan-kunjungan-sekolah/store', [SchoolVisitController::class,
 
 
 Route::get('/survey-kepuasan-sekolah', [SchoolSurveyController::class, "index"])->name('landing.survey-kepuasan-sekolah');
-
+route::post('/survey-kepuasan-sekolah/store', [SchoolSurveyController::class, "store"])->name('school.survey.store');
 
 Route::get('/survey-kepuasan-magang', [InternSurveyController::class, "index"])->name('landing.survey-kepuasan-magang');
+route::post('/survey-kepuasan-magang/store', [InternSurveyController::class, "store"])->name('intern.survey.store');
 
 Route::get('/survey-kepuasan-tamu', [GuestSurveyController::class, "index"])->name('landing.survey-kepuasan-tamu');
+Route::post('/survey-kepuasan-tamu/store', [GuestSurveyController::class, "store"])->name('guest.survey.store');

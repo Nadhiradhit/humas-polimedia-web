@@ -64,7 +64,7 @@
                         <label class="label">
                             <span class="text-lg font-semibold">Waktu Pelaksanaan</span>
                         </label>
-                        <div class="flex space-x-4">
+                        <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
                             <div class="flex items-center">
                                 <x-forms.form-radio name="time_visit" id="time_visit"  value="09.00-10.00" />
                                 <span class="ml-2">Pukul 09.00-10.00 WIB</span>
@@ -129,7 +129,7 @@
                         <label class="label">
                             <span class="text-lg font-semibold">Informasi Lainnya</span>
                         </label>
-                        <div class="flex space-x-4">
+                        <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
                             <div class="flex items-center">
                                 <x-forms.form-radio name="more_information" id="more_information" value="Informasi Penerimaan Mahasiswa Baru (PMB)" />
                                 <span class="ml-2">Informasi Penerimaan Mahasiswa Baru (PMB)</span>
@@ -144,7 +144,7 @@
                             </div>
                         </div>
                     </div>
-                    <x-button.button>
+                    <x-button.button class="w-full md:w-72">
                         Submit
                     </x-button.button>
                 </form>

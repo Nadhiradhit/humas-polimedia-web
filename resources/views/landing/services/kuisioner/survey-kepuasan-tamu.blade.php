@@ -37,7 +37,7 @@
                             <div class="flex items-center">
                                 <x-forms.form-radio name="information_purpose" id="other_info" value="Other" />
                                 <span class="ml-2">Lainnya:</span>
-                                <x-forms.form-input name="other_information_purpose" id="other_information_purpose" type="text" placeholder="Tuliskan keperluan lain" class="ml-2" />
+                                <x-forms.form-input name="other_information_purpose" id="other_information_purpose" type="text" placeholder="Tuliskan keperluan lain" class="w-full ml-2" />
                             </div>
                     </div>
 
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     @endforeach
-                    <x-button.button>
+                    <x-button.button class="w-full md:w-72">
                         Submit
                     </x-button.button>
                 </form>

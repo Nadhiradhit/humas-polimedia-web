@@ -192,7 +192,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <x-button.button>
+                    <x-button.button class="w-full md:w-72">
                         Submit
                     </x-button.button>
                 </form>

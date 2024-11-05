@@ -78,7 +78,7 @@
                         </label>
                         <x-forms.form-file name="letter_intership" id="letter_intership" placeholder="Tuliskan guru pendamping sekolah" required/>
                     </div>
-                    <x-button.button>
+                    <x-button.button class="w-full md:w-72">
                         Submit
                     </x-button.button>
                 </form>

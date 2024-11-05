@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AutheticationController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\InternController;
 use App\Http\Controllers\SchoolVisitController;
@@ -8,21 +9,31 @@ use App\Http\Controllers\InternSurveyController;
 use App\Http\Controllers\GuestSurveyController;
 use Illuminate\Support\Facades\Route;
 
+// Guest/Landing Page Routes
 Route::get('/', [LandingController::class, "LandingPage"])->name('landing.index');
 Route::get('/hubungi-kami', [LandingController::class, "HubungiKami"])->name('landing.hubungi-kami');
 
+// Intership Application Routes
 Route::get('/pengajuan-magang', [InternController::class, "index"])->name('landing.pengajuan-magang');
-Route::post('/magang/store', [InternController::class, "store"])->name('intern.store');
+Route::post('/pengajuang-magang/store', [InternController::class, "store"])->name('intern.store');
 
+// School Visit Application Routes
 Route::get('/pengajuan-kunjungan-sekolah', [SchoolVisitController::class, "index"])->name('landing.kunjungan-sekolah');
 Route::post('/pengajuan-kunjungan-sekolah/store', [SchoolVisitController::class, "store"])->name('kunjungan.store');
 
-
+// School Survey Routes
 Route::get('/survey-kepuasan-sekolah', [SchoolSurveyController::class, "index"])->name('landing.survey-kepuasan-sekolah');
 route::post('/survey-kepuasan-sekolah/store', [SchoolSurveyController::class, "store"])->name('school.survey.store');
 
+// Intern Survey Routes
 Route::get('/survey-kepuasan-magang', [InternSurveyController::class, "index"])->name('landing.survey-kepuasan-magang');
 route::post('/survey-kepuasan-magang/store', [InternSurveyController::class, "store"])->name('intern.survey.store');
 
+// Guest Survey Routes
 Route::get('/survey-kepuasan-tamu', [GuestSurveyController::class, "index"])->name('landing.survey-kepuasan-tamu');
 Route::post('/survey-kepuasan-tamu/store', [GuestSurveyController::class, "store"])->name('guest.survey.store');
+
+// Login Page Routes
+Route::get('/auth', [AutheticationController::class, "index"])->name('auth.login')->middleware('guest');
+
+// Admin Humas Page Routes

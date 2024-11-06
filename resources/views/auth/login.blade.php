@@ -2,11 +2,11 @@
 
 
 <x-layouts.auth-layout>
-    <div class="flex flex-col items-center justify-center p-8 mx-auto border-2 rounded-lg shadow-lg w-96 bg-base-100 border-accent">
+    <div class="flex flex-col items-center justify-center p-8 mx-auto border-2 rounded-lg shadow-lg w-96 bg-base-100 border-primary">
         <img src="../assets/images/polimedia-logo.png" alt="polimedia-logo" class="w-12 pb-4">
         <h1 class="text-4xl font-bold ">Login Humas</h1>
         <div class="w-full pt-4">
-            <form action="">
+            <form action="{{ route('auth.login') }}" method="POST">
                 @csrf
                 <div class="form-control">
                     <label for="email" class="label">
@@ -20,6 +20,9 @@
                     </label>
                     <x-forms.form-input name="password" id="password" type="password" placeholder="Masukkan password" required/>
                 </div>
+                {{-- <div class="form-control">
+                    <span class="flex gap-2 space-x-4 text-sm">Belum punya akun?<a href="/register" class="link link-hover link-primary">Register Account</a></span>
+                </div> --}}
                 <div class="form-control">
                     <x-button.button type="submit">Login</x-button.button>
                 </div>

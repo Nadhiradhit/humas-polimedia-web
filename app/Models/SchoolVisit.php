@@ -22,6 +22,7 @@ class SchoolVisit extends Model
         'request_program',
         'contact_person',
         'letter_visit',
-        'more_information'
+        'more_information',
+        'slug'
     ];
 }

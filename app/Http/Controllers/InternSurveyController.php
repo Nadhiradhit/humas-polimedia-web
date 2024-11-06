@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\InternSurvey;
 use App\Models\SurveyValue;
+use Illuminate\Support\Str;
 
 class InternSurveyController extends Controller
 {
@@ -30,9 +31,20 @@ class InternSurveyController extends Controller
             'question_7' => 'required',
         ]);
 
-        $survey = new InternSurvey();
-        $survey->fill($request->all());
-        $survey->save();
+        InternSurvey::create([
+            'school_name' => $request->input('school_name'),
+            'intern_time' => $request->input('intern_time'),
+            'question_1' => $request->input('question_1'),
+            'question_2' => $request->input('question_2'),
+            'question_3' => $request->input('question_3'),
+            'question_4' => $request->input('question_4'),
+            'question_5' => $request->input('question_5'),
+            'question_6' => $request->input('question_6'),
+            'question_7' => $request->input('question_7'),
+            'slug' => Str::of($request->input('school_name'))->slug('-'),
+        ]);
+
+
 
         return redirect()->route('landing.survey-kepuasan-magang')->with('success', 'Pengajuan Survey Magang Telah Disimpan');
     }

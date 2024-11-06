@@ -20,6 +20,7 @@ class SchoolIntern extends Model
         'accompaying_teacher',
         'submision_date',
         'contact_person',
+        'slug',
         'letter_intership'
     ];
 }

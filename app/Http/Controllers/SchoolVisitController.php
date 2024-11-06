@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\SchoolVisit;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SchoolVisitController extends Controller
 {
@@ -44,6 +45,8 @@ class SchoolVisitController extends Controller
         $file_name = date('YmdHis') . "." . $file_ext;
         $letter_file->move(public_path('storage/letter/visit'), $file_name);
 
+        $slug = Str::of($request->school_name)->slug('-');
+
         $data = [
             'school_name' => $request->school_name,
             'total_student' => $request->total_student,
@@ -56,6 +59,7 @@ class SchoolVisitController extends Controller
             'contact_person' => $request->contact_person,
             'letter_visit' => $file_name,
             'more_information' => $request->more_information,
+            'slug' => $slug
         ];
 
         SchoolVisit::create($data);

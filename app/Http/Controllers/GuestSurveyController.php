@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\GuestSurvey;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class GuestSurveyController extends Controller
 {
@@ -34,6 +35,7 @@ class GuestSurveyController extends Controller
             'clarity_info' => $request->input('clarity_info'),
             'service_quality' => $request->input('service_quality'),
             'service_duration' => $request->input('service_duration'),
+            'slug' => Str::of($request->input('guest_name'))->slug('-'),
         ]);
 
         return redirect()->route('landing.survey-kepuasan-tamu')->with('success', 'Pengajuan Survey Tamu Telah Disimpan');

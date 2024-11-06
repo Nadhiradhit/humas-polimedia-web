@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('accompaying_teacher', 100);
             $table->date('submision_date');
             $table->string('contact_person', 100);
+            $table->string('slug');
             $table->string('letter_intership');
             $table->timestamps();
         });

@@ -16,6 +16,7 @@ class GuestSurvey extends Model
         'clarity_info',
         'service_quality',
         'service_duration',
+        'slug',
     ];
 
 }

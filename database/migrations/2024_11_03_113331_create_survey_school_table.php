@@ -22,6 +22,7 @@ return new class extends Migration
             $table->char('question_5');
             $table->char('question_6');
             $table->char('question_7');
+            $table->string('slug');
             $table->timestamps();
         });
     }

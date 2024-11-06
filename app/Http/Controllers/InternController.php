@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Models\SchoolIntern;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -40,6 +41,8 @@ class InternController extends Controller
         $file_name = date('YmdHis') . "." . $file_ext;
         $letter_file->move(public_path('storage/letter/intern'), $file_name);
 
+        $slug = Str::of($request->name_school)->slug('-');
+
         $data = [
             'name_school' => $request->name_school,
             'total_student' => $request->total_student,
@@ -49,7 +52,8 @@ class InternController extends Controller
             'accompaying_teacher' => $request->accompaying_teacher,
             'submision_date' => $request->submision_date,
             'contact_person' => $request->contact_person,
-            'letter_intership' => $file_name
+            'letter_intership' => $file_name,
+            'slug' => $slug
         ];
 
         SchoolIntern::create($data);

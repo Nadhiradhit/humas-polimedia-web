@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('clarity_info', 100);
             $table->string('service_quality',100);
             $table->string('service_duration',100);
+            $table->string('slug');
             $table->timestamps();
         });
 

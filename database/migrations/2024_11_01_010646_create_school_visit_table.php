@@ -40,6 +40,7 @@ return new class extends Migration
             $table->string('contact_person', 100);
             $table->string('letter_visit');
             $table->string('more_information');
+            $table->string('slug');
             $table->timestamps();
         });
     }

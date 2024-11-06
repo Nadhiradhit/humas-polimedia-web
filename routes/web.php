@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\AutheticationController;
-use App\Http\Controllers\LandingController;
-use App\Http\Controllers\InternController;
-use App\Http\Controllers\SchoolVisitController;
-use App\Http\Controllers\SchoolSurveyController;
-use App\Http\Controllers\InternSurveyController;
-use App\Http\Controllers\GuestSurveyController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InternController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\GuestSurveyController;
+use App\Http\Controllers\SchoolVisitController;
+use App\Http\Controllers\InternSurveyController;
+use App\Http\Controllers\SchoolSurveyController;
+use App\Http\Controllers\AutheticationController;
 
 // Guest/Landing Page Routes
 Route::get('/', [LandingController::class, "LandingPage"])->name('landing.index');
@@ -35,5 +37,11 @@ Route::post('/survey-kepuasan-tamu/store', [GuestSurveyController::class, "store
 
 // Login Page Routes
 Route::get('/auth', [AutheticationController::class, "index"])->name('auth.login')->middleware('guest');
+Route::post('/auth', [AutheticationController::class, "login"])->middleware('guest');
+Route::get('/logout', [AutheticationController::class, "logout"])->name('auth.logout');
 
 // Admin Humas Page Routes
+Route::prefix('dashboard')->middleware(AdminMiddleware::class)->group(function () {
+    Route::resource('/', AdminController::class)->name('index', 'admin.dashboard');
+});
+

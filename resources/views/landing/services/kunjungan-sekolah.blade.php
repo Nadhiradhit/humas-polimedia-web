@@ -1,7 +1,7 @@
 @section('title', 'Kunjungan Sekolah')
 
 <x-layouts.app-layout>
-    <div class="flex flex-col mb-8 border-2 bg-base-100 rounded-2xl border-primary">
+    <div class="flex flex-col mb-8 border-2 bg-slate-50 rounded-2xl border-primary">
         <div class="w-full rounded-2xl">
             <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full rounded-t-2xl h-[20rem] lg:h-[30rem] ">
         </div>

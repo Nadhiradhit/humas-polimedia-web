@@ -1,7 +1,7 @@
 @section('title', 'Pengajuan Magang')
 
 <x-layouts.app-layout>
-    <div class="flex flex-col mb-8 border-2 bg-base-100 rounded-2xl border-primary">
+    <div class="flex flex-col mb-8 border-2 bg-slate-50 rounded-2xl border-primary">
         <div class="w-full rounded-2xl">
             <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full rounded-t-2xl h-[20rem] lg:h-[30rem] ">
         </div>
@@ -21,13 +21,15 @@
                         <label class="label">
                             <span class="text-lg font-semibold">Jumlah Siswa</span>
                         </label>
-                        <x-forms.form-input name="total_student" id="total_student" type="text" placeholder="Tuliskan jumlah siswa" required/>
+                        <x-forms.form-input name="total_student" id="total_student" type="number" placeholder="Tuliskan jumlah siswa" onchange="updateStudentInputs()" required />
                     </div>
-                    <div class="w-full form-control">
-                        <label class="label">
-                            <span class="text-lg font-semibold">Nama Lengkap Siswa</span>
-                        </label>
-                        <x-forms.form-input name="name_student" id="name_student" type="text" placeholder="Tuliskan nama lengkap siswa" required/>
+                    <div id="student-names-container">
+                        <div class="w-full form-control">
+                            <label class="label">
+                                <span class="text-lg font-semibold">Nama Lengkap Siswa</span>
+                            </label>
+                            <x-forms.form-input name="name_student[]" id="name_student_1" type="text" placeholder="Tuliskan nama lengkap siswa" required/>
+                        </div>
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
@@ -85,4 +87,38 @@
             </div>
         </div>
     </div>
+
+    {{-- Function for update student inputs --}}
+    <script>
+        function updateStudentInputs() {
+            const totalStudent = parseInt(document.getElementById('total_student').value);
+            const containerInputs = document.getElementById('student-names-container');
+            const currentInputs = containerInputs.querySelectorAll('.form-control').length;
+
+            for (let i = currentInputs + 1; i <= totalStudent; i++) {
+                const inputGroup = document.createElement('div');
+                inputGroup.classList.add('w-full', 'form-control');
+
+                const label = document.createElement('label');
+                label.classList.add('label');
+                label.innerHTML = `<span class="text-lg font-semibold">Nama Lengkap Siswa ${i}</span>`;
+
+                const input = document.createElement('input');
+                input.setAttribute('name', 'name_student[]');
+                input.setAttribute('id', `name_student_${i}`);
+                input.setAttribute('type', 'text');
+                input.setAttribute('placeholder', `Tuliskan nama lengkap siswa ${i}`);
+                input.setAttribute('required', '');
+                input.classList.add('input', 'input-bordered', 'w-full');
+
+                inputGroup.appendChild(label);
+                inputGroup.appendChild(input);
+                containerInputs.appendChild(inputGroup);
+            }
+
+            while (containerInputs.querySelectorAll('.form-control').length > totalStudent) {
+                containerInputs.removeChild(containerInputs.lastChild);
+            }
+        }
+    </script>
 </x-layouts.app-layout>

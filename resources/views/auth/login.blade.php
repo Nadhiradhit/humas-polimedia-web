@@ -27,6 +27,11 @@
                     <x-button.button type="submit">Login</x-button.button>
                 </div>
             </form>
+            <div class="flex justify-end">
+                <a href="{{ route('landing.index')}}" class="link link-hover link-primary">
+                    Kembali Ke Beranda
+                </a>
+            </div>
         </div>
     </div>
 

@@ -6,11 +6,24 @@ use Illuminate\Support\Str;
 use App\Models\SchoolIntern;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class InternController extends Controller
 {
     public function index(){
-        return view('landing.services.pengajuan-magang');
+        if(Auth::check()){
+            $user = Auth::user();
+            if(str_ends_with($user->email, '@polimedia.ac.id')){
+                $data = SchoolIntern::all();
+                return view('admin.services.pengajuan-magang-admin')->with('data', $data);
+            }
+        }else{
+            return view('landing.services.pengajuan-magang');
+        }
+
+
+
     }
 
     public function store(Request $request){
@@ -27,7 +40,8 @@ class InternController extends Controller
         $request->validate([
             'name_school' => 'required',
             'total_student' => 'required',
-            'name_student' => 'required',
+            'name_student' => 'required|array',
+            'name_student.*' => 'string|max:255',
             'majority_school' => 'required',
             'student_class' => 'required|in:X,XI,XII',
             'accompaying_teacher' => 'required',
@@ -38,7 +52,8 @@ class InternController extends Controller
 
         $letter_file = $request->file('letter_intership');
         $file_ext = $letter_file->extension();
-        $file_name = date('YmdHis') . "." . $file_ext;
+        $file_slug = Str::of($request->school_name);
+        $file_name = 'Surat Magang' . ' ' . $file_slug . '.' . $file_ext;
         $letter_file->move(public_path('storage/letter/intern'), $file_name);
 
         $slug = Str::of($request->name_school)->slug('-');
@@ -61,4 +76,13 @@ class InternController extends Controller
 
         return redirect()->route('landing.pengajuan-magang')->with('success', 'Pengajuan Magang Telah Disimpan');
     }
+
+    public function destroy(string $id){
+        $data = SchoolIntern::where('id', $id)->first();
+        File::delete(public_path('storage/letter/intern' . $data->cover));
+
+        SchoolIntern::where('id', $id)->delete();
+        return redirect()->route('admin.services.pengajuan-magang')->with('success', 'Data berhasil dihapus');
+    }
+
 }

@@ -23,4 +23,8 @@ class SchoolIntern extends Model
         'slug',
         'letter_intership'
     ];
+
+    protected $casts =[
+        'name_student' => 'array',
+    ];
 }

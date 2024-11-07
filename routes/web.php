@@ -43,5 +43,7 @@ Route::get('/logout', [AutheticationController::class, "logout"])->name('auth.lo
 // Admin Humas Page Routes
 Route::prefix('dashboard')->middleware(AdminMiddleware::class)->group(function () {
     Route::resource('/', AdminController::class)->name('index', 'admin.dashboard');
+    Route::resource('/pengajuan-magang', InternController::class)->name('index', 'admin.services.pengajuan-magang');
+    Route::resource('/kunjungan-sekolah', SchoolVisitController::class)->name('index', 'admin.services.pengajuan-sekolah');
 });
 

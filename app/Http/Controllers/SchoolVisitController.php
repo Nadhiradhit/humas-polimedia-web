@@ -4,13 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\SchoolVisit;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class SchoolVisitController extends Controller
 {
     public function index()
     {
+        if(Auth::check()){
+            $user = Auth::user();
+            if(str_ends_with($user->email, '@polimedia.ac.id')){
+                $data = SchoolVisit::all();
+                return view('admin.services.pengajuan-sekolah-admin')->with('data', $data);
+            }
+        }
         return view('landing.services.kunjungan-sekolah');
     }
 
@@ -42,7 +51,8 @@ class SchoolVisitController extends Controller
 
         $letter_file = $request->file('letter_visit');
         $file_ext = $letter_file->extension();
-        $file_name = date('YmdHis') . "." . $file_ext;
+        $file_slug = Str::of($request->school_name);
+        $file_name = 'Surat Kunjungan' . ' ' . $file_slug . '.' . $file_ext;
         $letter_file->move(public_path('storage/letter/visit'), $file_name);
 
         $slug = Str::of($request->school_name)->slug('-');
@@ -64,6 +74,14 @@ class SchoolVisitController extends Controller
 
         SchoolVisit::create($data);
 
-        return redirect()->route('landing.kunjungan-sekolah')->with('success', 'Pengajuan Magang Telah Disimpan');
+        return redirect()->route('landing.kunjungan-sekolah')->with('success', 'Pengajuan Sekolah Telah Disimpan');
+    }
+
+    public function destroy(string $id){
+        $data = SchoolVisit::where('id', $id)->first();
+        File::delete(public_path('storage/letter/visit' . $data->cover));
+
+        SchoolVisit::where('id', $id)->delete();
+        return redirect()->route('admin.services.pengajuan-sekolah')->with('success', 'Data berhasil dihapus');
     }
 }

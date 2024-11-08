@@ -26,7 +26,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name_school  }}</td>
-                        <td>{{ $item->total_student }}</td>
+                        <td>{{ $item->total_student . ' Siswa' }}</td>
                         <td>
                             <ul>
                                 @foreach ($item->name_student as $student_name )

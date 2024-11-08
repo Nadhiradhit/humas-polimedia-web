@@ -5,13 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\GuestSurvey;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GuestSurveyController extends Controller
 {
 
     public function index()
     {
-        return view('landing.services.kuisioner.survey-kepuasan-tamu');
+        if(Auth::check()) {
+            $user = Auth::user();
+            if(str_ends_with($user->email, '@polimedia.ac.id')) {
+                $data = GuestSurvey::all();
+                return view('admin.services.survey.guest.index')->with('data', $data);
+            }
+        }
+        else{
+            return view('landing.services.kuisioner.survey-kepuasan-tamu');
+        }
     }
 
     public function store(Request $request)
@@ -39,5 +49,12 @@ class GuestSurveyController extends Controller
         ]);
 
         return redirect()->route('landing.survey-kepuasan-tamu')->with('success', 'Pengajuan Survey Tamu Telah Disimpan');
+    }
+
+    public function destroy(string $id){
+
+        GuestSurvey::where('id', $id)->delete();
+
+        return redirect()->route('admin.services.survey.guest.index')->with('success', 'Data berhasil dihapus');
     }
 }

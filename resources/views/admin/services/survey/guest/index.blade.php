@@ -12,6 +12,7 @@
                 <th>No</th>
                 <th>Name</th>
                 <th>Information</th>
+                <th>Question 1</th>
                 <th>Action</th>
             </thead>
             <tbody>
@@ -20,10 +21,13 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->guest_name  }}</td>
                         <td>{{ $item->information_purpose }}</td>
+                        <td>{{ $item->clarity_info}}</td>
                         <td>
                             <div class="flex gap-2">
-                                <x-button.button class="btn-sm btn-info" href="{{  url('/dashboard/survey-kepuasan-tamu/' . $item->id . '/show')}}">
-                                    Detail
+                                <x-button.button class="btn-sm btn-info">
+                                    <a href="{{  url('/dashboard/survey-kepuasan-tamu/show/'. $item->slug )}}">
+                                        Detail
+                                    </a>
                                 </x-button.button>
                                 <form action="{{ '/dashboard/survey-kepuasan-tamu/' . $item->id }}" method="POST" onsubmit="return confirm('Apakah data ingin dihapus ?')">
                                     @csrf

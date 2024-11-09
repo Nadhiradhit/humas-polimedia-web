@@ -46,5 +46,7 @@ Route::prefix('dashboard')->middleware(AdminMiddleware::class)->group(function (
     Route::resource('/pengajuan-magang', InternController::class)->name('index', 'admin.services.pengajuan-magang');
     Route::resource('/kunjungan-sekolah', SchoolVisitController::class)->name('index', 'admin.services.pengajuan-sekolah');
     Route::resource('/survey-kepuasan-tamu', GuestSurveyController::class)->name('index', 'admin.services.survey.guest.index');
+    Route::get('/survey-kepuasan-tamu/show/{slug}', [GuestSurveyController::class, 'show'])
+    ->name('admin.services.survey.guest.show');
 });
 

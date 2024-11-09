@@ -51,6 +51,11 @@ class GuestSurveyController extends Controller
         return redirect()->route('landing.survey-kepuasan-tamu')->with('success', 'Pengajuan Survey Tamu Telah Disimpan');
     }
 
+    public function show(string $slug){
+        $data = GuestSurvey::where('slug', $slug)->first();
+        return view('admin.services.survey.guest.show')->with('data', $data);
+    }
+
     public function destroy(string $id){
 
         GuestSurvey::where('id', $id)->delete();

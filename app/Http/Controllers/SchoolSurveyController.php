@@ -6,15 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\SchoolSurvey;
 use App\Models\SurveyValue;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class SchoolSurveyController extends Controller
 {
     public function index(Request $request)
     {
-        $value = new SurveyValue();
-        $data['surveyValue'] = $value->surveyValue;
-        $data['question'] = $request->session()->get('question');
-        return view('landing.services.kuisioner.survey-kepuasan-sekolah', $data);
+        if(Auth:: check()){
+            $user = Auth::user();
+            if(str_ends_with($user->email, '@polimedia.ac.id')) {
+                $data = SchoolSurvey::all();
+                return view('admin.services.survey.school.index')->with('data', $data);
+            }
+        }else{
+            $value = new SurveyValue();
+            $data['surveyValue'] = $value->surveyValue;
+            $data['question'] = $request->session()->get('question');
+            return view('landing.services.kuisioner.survey-kepuasan-sekolah', $data);
+        }
     }
 
     public function store(Request $request)
@@ -47,4 +56,14 @@ class SchoolSurveyController extends Controller
         return redirect()->route('landing.survey-kepuasan-sekolah')->with('success', 'Pengajuan Survey Sekolah Telah Disimpan');
     }
 
+    public function show(string $slug){
+        $data = SchoolSurvey::where('slug', $slug)->first();
+        return view('admin.services.survey.school.show')->with('data', $data);
+    }
+
+    public function destroy(string $id){
+        SchoolSurvey::where('id', $id)->delete();
+
+        return redirect()->route('admin.services.survey.school.index')->with('success', 'Data berhasil dihapus');
+    }
 }

@@ -6,15 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\InternSurvey;
 use App\Models\SurveyValue;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class InternSurveyController extends Controller
 {
     public function index(Request $request)
     {
-        $value = new SurveyValue();
-        $data['surveyValue'] = $value->surveyValue;
-        $data['question'] = $request->session()->get('question');
-        return view('landing.services.kuisioner.survey-kepuasan-magang', $data);
+        if(Auth:: check()){
+            $user = Auth::user();
+            if(str_ends_with($user->email, '@polimedia.ac.id')) {
+                $data = InternSurvey::all();
+                return view('admin.services.survey.intern.index')->with('data', $data);
+            }
+        }else{
+            $value = new SurveyValue();
+            $data['surveyValue'] = $value->surveyValue;
+            $data['question'] = $request->session()->get('question');
+            return view('landing.services.kuisioner.survey-kepuasan-magang', $data);
+        }
     }
 
     public function store(Request $request)
@@ -47,5 +56,16 @@ class InternSurveyController extends Controller
 
 
         return redirect()->route('landing.survey-kepuasan-magang')->with('success', 'Pengajuan Survey Magang Telah Disimpan');
+    }
+
+    public function show(string $slug){
+        $data = InternSurvey::where('slug', $slug)->first();
+        return view('admin.services.survey.intern.show')->with('data', $data);
+    }
+
+    public function destroy(string $id){
+        InternSurvey::where('id', $id)->delete();
+
+        return redirect()->route('admin.services.survey.intern.index')->with('success', 'Data berhasil dihapus');
     }
 }

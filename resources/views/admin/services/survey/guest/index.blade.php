@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="w-full h-screen p-8 border-2 shadow-md border-secondary rounded-xl bg-slate-50">
-    <h1 class="text-4xl font-bold">Data Survey Tamu</h1>
+    <h1 class="text-4xl font-bold">Data Survey Kepuasan Tamu</h1>
     {{-- <p>Total Data : {{ $data->count() }}</p> --}}
     <div class="pt-8 overflow-x-auto">
         <table class="table w-full table-primary">

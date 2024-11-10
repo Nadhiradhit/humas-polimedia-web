@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex w-full gap-4 py-4">
+        <div class="flex flex-col w-full gap-4 py-4 lg:flex-row">
             <div class="w-full p-8 bg-accent rounded-2xl">
                 <h2 class="text-2xl font-bold w-96 p-2 text-center text-slate-950 bg-red-200 border-[3px] rounded-full border-slate-950 mb-4">Struktur Organisasi</h2>
                 <img src="../assets/images/struktur-organisasi.png" alt="struktur-organisasi-humas" class="rounded-2xl">

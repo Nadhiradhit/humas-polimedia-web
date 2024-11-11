@@ -15,8 +15,17 @@ class InternSurveyController extends Controller
         if(Auth:: check()){
             $user = Auth::user();
             if(str_ends_with($user->email, '@polimedia.ac.id')) {
-                $data = InternSurvey::all();
-                return view('admin.services.survey.intern.index')->with('data', $data);
+                $search = $request->input('search');
+                $intern = InternSurvey::when($search, function ($query, $search){
+                    return $query->where('school_name', 'like', '%' . $search . '%');
+                })->get();
+
+                if(!$search && null){
+                    $intern = InternSurvey::all();
+                    return view('admin.services.survey.intern.index', compact('intern'));
+                } else {
+                    return view('admin.services.survey.intern.index', compact('search', 'intern'));
+                }
             }
         }else{
             $value = new SurveyValue();
@@ -65,7 +74,6 @@ class InternSurveyController extends Controller
 
     public function destroy(string $id){
         InternSurvey::where('id', $id)->delete();
-
         return redirect()->route('admin.services.survey.intern.index')->with('success', 'Data berhasil dihapus');
     }
 }

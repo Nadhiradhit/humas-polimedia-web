@@ -10,13 +10,22 @@ use Illuminate\Support\Facades\Auth;
 class GuestSurveyController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         if(Auth::check()) {
             $user = Auth::user();
             if(str_ends_with($user->email, '@polimedia.ac.id')) {
-                $data = GuestSurvey::all();
-                return view('admin.services.survey.guest.index')->with('data', $data);
+                $search = $request->input('search');
+                $guest = GuestSurvey::when($search, function ($query, $search){
+                    return $query->where('guest_name', 'like', '%' . $search . '%');
+                })->get();
+
+                if(!$search && null){
+                    $guest = GuestSurvey::all();
+                    return view('admin.services.survey.guest.index', compact('guest'));
+                }else{
+                    return view('admin.services.survey.guest.index', compact('search', 'guest'));
+                }
             }
         }
         else{

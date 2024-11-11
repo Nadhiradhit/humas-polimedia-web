@@ -11,12 +11,21 @@ use Illuminate\Support\Facades\File;
 
 class InternController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         if(Auth::check()){
             $user = Auth::user();
             if(str_ends_with($user->email, '@polimedia.ac.id')){
-                $data = SchoolIntern::all();
-                return view('admin.services.pengajuan-magang-admin')->with('data', $data);
+                $search = $request->input('search');
+                $intern = SchoolIntern::when($search, function ($query, $search){
+                    return $query->where('name_school', 'like', '%' . $search . '%');
+                })->get();
+
+                if(!$search && null){
+                    $intern = SchoolIntern::all();
+                    return view('admin.services.pengajuan-magang-admin', compact('intern'));
+                }else{
+                    return view('admin.services.pengajuan-magang-admin', compact('search', 'intern'));
+                }
             }
         }else{
             return view('landing.services.pengajuan-magang');

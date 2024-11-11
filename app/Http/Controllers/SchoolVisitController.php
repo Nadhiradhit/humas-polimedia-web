@@ -11,13 +11,22 @@ use Illuminate\Support\Facades\File;
 
 class SchoolVisitController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         if(Auth::check()){
             $user = Auth::user();
             if(str_ends_with($user->email, '@polimedia.ac.id')){
-                $data = SchoolVisit::all();
-                return view('admin.services.pengajuan-sekolah-admin')->with('data', $data);
+                $search = $request->input('search');
+                $school = SchoolVisit::when($search, function($query, $search){
+                    return $query->where('school_name', 'like', '%' .$search. '%');
+                })->get();
+
+                if(!$search && null){
+                    $school = SchoolVisit::all();
+                    return view('admin.services.pengajuan-sekolah-admin')->with('data', $school);
+                } else {
+                    return view('admin.services.pengajuan-sekolah-admin', compact('search', 'school'));
+                }
             }
         }
         return view('landing.services.kunjungan-sekolah');

@@ -30,7 +30,7 @@
                         </ul>
                 </details>
             </li>
-            <li>
+            {{-- <li>
                 <details onclick="toggleDetails(event)">
                     <summary>Dokumentasi & Berita</summary>
                         <ul class="w-56 p-2">
@@ -38,7 +38,7 @@
                             <li><a>Dokumentasi</a></li>
                         </ul>
                 </details>
-            </li>
+            </li> --}}
             <li>
                 <x-navbar.nav-link href="{{ route('landing.hubungi-kami') }}" :active="request()->routeIs('landing.hubungi-kami')">
                 Hubungi Kami
@@ -84,7 +84,7 @@
                         </ul>
                     </details>
                 </li>
-                <li>
+                {{-- <li>
                     <details onclick="toggleDetails(event)">
                         <summary class="text-4xl font-bold cursor-pointer">Dokumentasi & Berita</summary>
                         <ul class="pl-4 space-y-1 text-2xl">
@@ -92,7 +92,7 @@
                             <li><a>Dokumentasi</a></li>
                         </ul>
                     </details>
-                </li>
+                </li> --}}
                 <li>
                     <x-navbar.nav-link href="{{ route('landing.hubungi-kami') }}" :active="request()->routeIs('landing.hubungi-kami')" class="text-4xl font-bold">
                         Hubungi Kami

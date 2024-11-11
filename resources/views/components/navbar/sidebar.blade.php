@@ -64,10 +64,9 @@
             </li>
         </ul>
     </div>
-    <div class="flex items-end justify-end">
-        <button @click="sidebarOpen = true" class="p-4 text-gray-700 sm:hidden ">
-            <label class="btn btn-circle swap swap-rotate">
-                <input type="checkbox" />
+    <div class="flex items-center justify-between w-full p-2 sm:hidden">
+        <button @click="sidebarOpen = true" class="text-gray-700">
+            <label class="btn btn-circle">
                 <svg
                 class="fill-current swap-off"
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,9 +74,10 @@
                 height="32"
                 viewBox="0 0 512 512">
                 <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-                </svg>
-            </label>
-        </button>
+            </svg>
+        </label>
+    </button>
+    <h1 class="text-lg font-bold">Dashboard Humas polimedia</h1>
     </div>
 </div>
 

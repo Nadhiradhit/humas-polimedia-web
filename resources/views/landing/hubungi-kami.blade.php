@@ -3,7 +3,7 @@
 
 <x-layouts.app-layout>
     <section class="w-full">
-        <div class="w-full p-8 bg-secondary rounded-2xl">
+        <div class="w-full p-8 bg-secondary rounded-2xl border-slate-950 border-[3px]">
             <div class="flex space-x-4">
                 <p class="w-24 p-2 text-center text-slate-950 bg-gray-200 font-bold border-[3px] rounded-full border-slate-950">Humas</p>
                 <p class="w-32 p-2 text-center text-slate-950 font-bold bg-red-200 border-[3px] rounded-full border-slate-950">Polimedia</p>
@@ -11,7 +11,7 @@
             </div>
             <div class="flex flex-col pt-12">
                 <h2 class="text-6xl font-bold text-slate-900">Hubungi Kami</h2>
-                <p class="py-16 text-lg font-semibold text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                {{-- <p class="py-16 text-lg font-semibold text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quibusdam, optio facere sunt ex ratione voluptatum minima debitis iste totam
                     molestias veniam nam, voluptatibus illum, quas sint? Harum eius id
                     dolorem fugiat necessitatibus architecto molestias consequatur asperiores
@@ -21,11 +21,11 @@
                     ipsam ea, sit deserunt, natus soluta? Neque ipsum qui obcaecati recusandae
                     accusamus facere quibusdam. Labore cupiditate recusandae architecto quas dicta,
                     magnam reiciendis ratione ipsam natus aliquam aliquid et voluptatibus?
-                </p>
+                </p> --}}
             </div>
         </div>
         <div class="grid gap-8 py-8 md:grid-cols-2">
-            <div class="h-56 px-4 py-5 space-y-2 border-4 shadow bg-base-100 rounded-2xl">
+            <div class="h-56 px-4 py-5 space-y-2 border-[3px] bg-base-100 rounded-2xl border-slate-950">
                 <div class="border-2 border-green-500 collapse collapse-arrow">
                     <input type="radio" name="my-accordion-1" checked="checked"/>
                         <div class="flex items-center gap-4 collapse-title">
@@ -43,11 +43,11 @@
                             <h2 class="text-xl font-semibold">Email</h2>
                         </div>
                         <div class="collapse-content">
-                            <p class="text-lg font-medium">example@polimedia.ac.id</p>
+                            <p class="text-lg font-medium">humas@polimedia.ac.id</p>
                         </div>
                 </div>
             </div>
-            <div class="flex flex-col items-center justify-center w-full h-56 rounded-2xl bg-accent">
+            <div class="flex flex-col items-center justify-center w-full h-56 rounded-2xl bg-accent border-slate-950 border-[3px]">
                 <h1 class="text-4xl font-bold">Jadwal Kami</h1>
                 <p class="pt-4 text-lg font-semibold">Senin - Jumat</p>
                 <p class="text-lg font-semibold">08.00 - 16.00 WIB</p>
@@ -64,7 +64,7 @@
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="flex flex-col items-center justify-center w-full col-span-3 md:col-span-2 h-96 rounded-2xl bg-secondary">
+            <div class="flex flex-col items-center justify-center w-full col-span-3 md:col-span-2 h-96 rounded-2xl bg-secondary border-slate-950 border-[3px]">
                 <div class="flex items-center gap-2">
                     <ion-icon name="location-outline" size="large"></ion-icon>
                     <h1 class="text-4xl font-bold">Lokasi Kami</h1>

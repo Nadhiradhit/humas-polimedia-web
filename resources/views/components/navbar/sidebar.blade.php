@@ -1,6 +1,6 @@
 <div x-data="{ openDropdown: null, sidebarOpen: false }" class="flex md:h-full">
-    <div :class="{'block': sidebarOpen, 'hidden': !sidebarOpen}" class="fixed inset-y-0 left-0 z-20 w-64 p-8 border-2 shadow-md lg:w-80 rounded-xl bg-slate-50 sm:block sm:relative">
-        <button @click="sidebarOpen = false" class="absolute text-gray-400 top-4 right-4 sm:hidden hover:text-white">
+    <div :class="{'block': sidebarOpen, 'hidden': !sidebarOpen}" class="fixed inset-y-0 left-0 z-20 w-full p-8 border-2 shadow-md lg:w-80 rounded-xl bg-slate-50 sm:block sm:relative">
+        <button @click="sidebarOpen = false" class="absolute text-gray-400 top-4 right-4 sm:hidden hover:text-gray-600">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
@@ -57,7 +57,7 @@
                     User
                 </x-navbar.nav-link>
             </li>
-            <li class="px-4 py-2 rounded-lg bg-primary hover:bg-purple-600 hover:text-white00">
+            <li class="px-4 py-2 rounded-lg bg-primary hover:bg-purple-300 hover:text-slate-800">
                 <x-navbar.nav-link href="{{ route('auth.logout') }}" :active="request()->routeIs('auth.logout')">
                     Logout
                 </x-navbar.nav-link>
@@ -65,6 +65,7 @@
         </ul>
     </div>
     <div class="flex items-center justify-between w-full p-2 sm:hidden">
+        <h1 class="text-lg font-bold">Dashboard Humas polimedia</h1>
         <button @click="sidebarOpen = true" class="text-gray-700">
             <label class="btn btn-circle">
                 <svg
@@ -77,7 +78,6 @@
             </svg>
         </label>
     </button>
-    <h1 class="text-lg font-bold">Dashboard Humas polimedia</h1>
     </div>
 </div>
 

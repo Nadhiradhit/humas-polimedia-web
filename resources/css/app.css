@@ -31,6 +31,6 @@
 
 @layer components {
     .image-index {
-        @apply w-full lg:w-1/2 rounded-tl-2xl rounded-bl-2xl h-[20rem] lg:h-[50rem];
+        @apply w-full lg:w-1/2 rounded-tl-2xl rounded-bl-2xl h-[20rem] lg:h-[35rem];
     }
 }

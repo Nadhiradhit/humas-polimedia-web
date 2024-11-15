@@ -3,25 +3,14 @@
 
 <x-layouts.app-layout>
     <section class="w-full">
-        <div class="w-full p-8 bg-secondary rounded-2xl border-slate-950 border-[3px]">
+        <div class="w-full p-8 bg-primary rounded-2xl border-slate-950 border-[3px]">
             <div class="flex space-x-4">
                 <p class="w-24 p-2 text-center text-slate-950 bg-gray-200 font-bold border-[3px] rounded-full border-slate-950">Humas</p>
                 <p class="w-32 p-2 text-center text-slate-950 font-bold bg-red-200 border-[3px] rounded-full border-slate-950">Polimedia</p>
-                <p class="w-44 p-2 text-center text-slate-950 font-bold bg-slate-50 border-[3px] rounded-full border-slate-950">Tentang Kami</p>
+                <p class="w-44 p-2 text-center text-slate-950 font-bold bg-slate-50 border-[3px] rounded-full border-slate-950">Hubungi Kamu</p>
             </div>
             <div class="flex flex-col pt-12">
                 <h2 class="text-6xl font-bold text-slate-900">Hubungi Kami</h2>
-                {{-- <p class="py-16 text-lg font-semibold text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam, optio facere sunt ex ratione voluptatum minima debitis iste totam
-                    molestias veniam nam, voluptatibus illum, quas sint? Harum eius id
-                    dolorem fugiat necessitatibus architecto molestias consequatur asperiores
-                    possimus, voluptatibus mollitia voluptates reprehenderit corporis
-                    esse molestiae, quis, est iste reiciendis iure magnam quod error
-                    accusantium beatae. Optio quasi doloribus, vel accusantium voluptatibus eos
-                    ipsam ea, sit deserunt, natus soluta? Neque ipsum qui obcaecati recusandae
-                    accusamus facere quibusdam. Labore cupiditate recusandae architecto quas dicta,
-                    magnam reiciendis ratione ipsam natus aliquam aliquid et voluptatibus?
-                </p> --}}
             </div>
         </div>
         <div class="grid gap-8 py-8 md:grid-cols-2">
@@ -64,7 +53,7 @@
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="flex flex-col items-center justify-center w-full col-span-3 md:col-span-2 h-96 rounded-2xl bg-secondary border-slate-950 border-[3px]">
+            <div class="flex flex-col items-center justify-center w-full col-span-3 md:col-span-2 h-96 rounded-2xl bg-accent border-slate-950 border-[3px]">
                 <div class="flex items-center gap-2">
                     <ion-icon name="location-outline" size="large"></ion-icon>
                     <h1 class="text-4xl font-bold">Lokasi Kami</h1>

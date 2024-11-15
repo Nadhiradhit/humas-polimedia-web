@@ -5,18 +5,18 @@
         <div class="flex flex-col lg:flex-row bg-secondary rounded-2xl border-slate-950 border-[3px]">
             <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="image-index">
             <div class="p-4 lg:p-8">
-                <div class="flex items-center pt-4 space-x-4">
+                <div class="flex items-center pt-8 space-x-4">
                     <p class="w-24 p-2 text-center text-slate-950 font-bold bg-gray-200 border-[3px] rounded-full border-slate-950">Humas</p>
                     <p class="w-32 p-2 text-center text-slate-950 font-bold bg-red-200 border-[3px] rounded-full border-slate-950">Polimedia</p>
                 </div>
-                <div class="flex flex-col pt-8 h-[30rem]">
+                <div class="flex flex-col justify-center h-[25rem]">
                     <h2 class="text-4xl font-bold lg:text-6xl text-slate-900">Humas Polimedia</h2>
-                    <p class="pt-8 font-semibold text-justify lg:text-lg ">
-                        Selamat datang di halaman Humas Politeknik Negeri Media Kreatif Jakarta, di mana kami menjembatani informasi dan membangun koneksi antara kampus dan masyarakat luas.
-                        Sebagai garda depan komunikasi Polimedia, kami berkomitmen memberikan informasi yang akurat, terkini, dan relevan terkait berbagai kegiatan akademik, prestasi, kolaborasi, hingga pengumuman penting lainnya.
-                        Kami hadir untuk mendukung aspirasi, menyampaikan nilai-nilai, serta memperkuat citra positif kampus dalam setiap langkah.
-                        Mari bersama mengukir cerita inspiratif dan menjalin sinergi untuk mencapai kemajuan bersama.
-                        Temukan informasi lebih lanjut dan jadilah bagian dari perjalanan Polimedia Jakarta dalam mewujudkan generasi kreatif unggul!
+                    <p class="pt-8 font-semibold lg:text-lg ">
+                        Selamat datang di Halaman
+                        Humas Politeknik Negeri Media Kreatif merupakan unit yang berfokus pada kepuasan pelayanan.
+                        Pelayanan yang diberikan berkaitan dengan kebutuhan informasi publik terutama tentang hal-hal yang berkaitan dengan lembaga seperti informasi mahasiswa baru, penerimaan magang, kunjungan sekolah, atau pun penyampaian berita kegiatan kampus.
+                        Dengan semangat yang mengedepankan kualitas,
+                        Humas Polimedia selalu memaksimalkan pelayanan yang ramah dan akuntabel.
                     </p>
                 </div>
             </div>
@@ -52,10 +52,10 @@
             <h2 class="text-2xl font-bold w-full lg:w-96 p-2 text-center text-slate-950 bg-gray-200 border-[3px] rounded-full border-slate-950 mb-4">Galeri Humas</h2>
             <div class="grid w-full grid-cols-1 gap-4 pb-8 md:grid-cols-2 lg:grid-cols-4">
                 <div class="w-full">
-                    <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full h-60 cursor-pointer rounded-xl border-[3px] border-slate-950 transition-transform duration-300 hover:scale-105">
+                    <img src="../assets/images/humas-gallery-1.jpg" alt="kampus-polimedia-img" class="w-full h-60 cursor-pointer rounded-xl border-[3px] border-slate-950 transition-transform duration-300 hover:scale-105">
                 </div>
-                <img src="../assets/images/campus-polimedia-2.jpeg" alt="kampus-polimedia-img" class="w-full h-60 cursor-pointer rounded-xl border-[3px] border-slate-950 transition-transform duration-300 hover:scale-105">
-                <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full h-60 cursor-pointer rounded-xl border-[3px] border-slate-950 transition-transform duration-300 hover:scale-105">
+                <img src="../assets/images/humas-gallery-2.jpg" alt="kampus-polimedia-img" class="w-full h-60 cursor-pointer rounded-xl border-[3px] border-slate-950 transition-transform duration-300 hover:scale-105 object-cover">
+                <img src="../assets/images/humas-gallery-3.jpg" alt="kampus-polimedia-img" class="w-full h-60 cursor-pointer rounded-xl border-[3px] border-slate-950 transition-transform duration-300 hover:scale-105">
                 <img src="../assets/images/campus-polimedia-2.jpeg" alt="kampus-polimedia-img" class="w-full h-60 cursor-pointer rounded-xl border-[3px] border-slate-950 transition-transform duration-300 hover:scale-105">
             </div>
         </div>

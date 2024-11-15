@@ -39,6 +39,7 @@
                                 <span class="ml-2">Lainnya:</span>
                                 <x-forms.form-input name="other_information_purpose" id="other_information_purpose" type="text" placeholder="Tuliskan keperluan lain" class="w-full ml-2" />
                             </div>
+                        </div>
                     </div>
 
                     @php

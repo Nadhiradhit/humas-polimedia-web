@@ -1,6 +1,5 @@
 @section( 'title', 'Humas Polimedia Login' )
 
-
 <x-layouts.auth-layout>
     <div class="flex flex-col items-center justify-center p-8 mx-auto border-2 rounded-lg shadow-lg w-96 bg-base-100 border-primary">
         <img src="../assets/images/polimedia-logo.png" alt="polimedia-logo" class="w-12 pb-4">
@@ -18,7 +17,13 @@
                     <label for="password" class="label">
                         <span class="label-text">Password</span>
                     </label>
-                    <x-forms.form-input name="password" id="password" type="password" placeholder="Masukkan password" required/>
+                    <div class="relative">
+                        <input name="password" id="password" type="password" placeholder="Masukkan password" class="block w-full p-4 input input-bordered input-primary ps-2.5" required >
+                        <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </button>
+                    </div>
+                    {{-- <x-forms.form-input name="password" id="password" type="password" placeholder="Masukkan password" required/> --}}
                 </div>
                 {{-- <div class="form-control">
                     <span class="flex gap-2 space-x-4 text-sm">Belum punya akun?<a href="/register" class="link link-hover link-primary">Register Account</a></span>
@@ -35,4 +40,17 @@
         </div>
     </div>
 
+    <script>
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const icon = document.querySelector('ion-icon');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.name = 'eye-off-outline';
+            } else {
+                passwordField.type = 'password';
+                icon.name = 'eye-outline';
+            }
+        }
+    </script>
 </x-layouts.auth-layout>

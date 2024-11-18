@@ -36,10 +36,10 @@
                         </div>
                 </div>
             </div>
-            <div class="flex flex-col items-center justify-center w-full h-56 rounded-2xl bg-accent border-slate-950 border-[3px]">
-                <h1 class="text-4xl font-bold">Jadwal Kami</h1>
-                <p class="pt-4 text-lg font-semibold">Senin - Jumat</p>
-                <p class="text-lg font-semibold">08.00 - 16.00 WIB</p>
+            <div class="flex flex-col items-start justify-center w-full h-56 rounded-2xl bg-accent border-slate-950 border-[3px] p-4">
+                <h1 class="text-6xl font-bold">Jadwal Kami</h1>
+                <p class="pt-4 text-2xl font-bold">Senin - Jumat</p>
+                <p class="text-2xl font-semibold">08.00 - 16.00 WIB</p>
             </div>
         </div>
         <div class="grid gap-8 pb-8 md:grid-cols-5">

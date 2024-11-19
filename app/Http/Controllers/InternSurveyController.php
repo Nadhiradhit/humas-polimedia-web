@@ -18,14 +18,10 @@ class InternSurveyController extends Controller
                 $search = $request->input('search');
                 $intern = InternSurvey::when($search, function ($query, $search){
                     return $query->where('school_name', 'like', '%' . $search . '%');
-                })->get();
+                })->paginate(10);
 
-                if(!$search && null){
-                    $intern = InternSurvey::all();
-                    return view('admin.services.survey.intern.index', compact('intern'));
-                } else {
-                    return view('admin.services.survey.intern.index', compact('search', 'intern'));
-                }
+                return view('admin.services.survey.intern.index', compact('search', 'intern'));
+
             }
         }else{
             $value = new SurveyValue();

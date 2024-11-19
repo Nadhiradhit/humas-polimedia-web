@@ -3,7 +3,7 @@
 @extends('components.layouts.admin-layout')
 
 @section('content')
-<div class="w-full h-screen p-8 border-2 shadow-md border-secondary rounded-xl bg-slate-50">
+<div class="w-full h-full p-8 border-2 shadow-md border-secondary rounded-xl bg-slate-50">
     <h1 class="text-4xl font-bold">Data Survey Kepuasan Sekolah</h1>
     {{-- <p>Total Data : {{ $data->count() }}</p> --}}
     <div class="flex py-4 lg:justify-end">
@@ -24,29 +24,31 @@
             </thead>
             <tbody>
                 @foreach ($school as $item)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->school_name  }}</td>
-                        <td>{{ \Carbon\Carbon::parse($item->date_visit)->format('l, F jS Y ') }}</td>
-                        <td>
-                            <div class="flex gap-2">
-                                <x-button.button class="btn-sm btn-info">
-                                    <a href="{{  url('/dashboard/survey-kepuasan-sekolah/show/'. $item->slug )}}">
-                                        Detail
-                                    </a>
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $item->school_name  }}</td>
+                    <td>{{ \Carbon\Carbon::parse($item->date_visit)->format('l, F jS Y ') }}</td>
+                    <td>
+                        <div class="flex gap-2">
+                            <x-button.button class="btn-sm btn-info">
+                                <a href="{{  url('/dashboard/survey-kepuasan-sekolah/show/'. $item->slug )}}">
+                                    Detail
+                                </a>
+                            </x-button.button>
+
+                            <form action="{{ '/dashboard/survey-kepuasan-sekolah/' . $item->id }}" method="POST" onsubmit="return confirm('Apakah data ingin dihapus ?')">
+                                @csrf
+                                @method('DELETE')
+                                <x-button.button class="btn-sm btn-error" type="submit">
+                                    Delete
                                 </x-button.button>
-                                <form action="{{ '/dashboard/survey-kepuasan-sekolah/' . $item->id }}" method="POST" onsubmit="return confirm('Apakah data ingin dihapus ?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <x-button.button class="btn-sm btn-error" type="submit">
-                                        Delete
-                                    </x-button.button>
-                                </form>
-                            </div>
-                        </td>
+                            </form>
+                        </div>
+                    </td>
                 @endforeach
             </tbody>
         </table>
     </div>
+    {{ $school->appends(['search' => $search])->links() }}
 </div>
 @endsection

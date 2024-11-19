@@ -18,14 +18,10 @@ class InternController extends Controller
                 $search = $request->input('search');
                 $intern = SchoolIntern::when($search, function ($query, $search){
                     return $query->where('name_school', 'like', '%' . $search . '%');
-                })->get();
+                })->paginate(10);
 
-                if(!$search && null){
-                    $intern = SchoolIntern::all();
-                    return view('admin.services.pengajuan-magang-admin', compact('intern'));
-                }else{
-                    return view('admin.services.pengajuan-magang-admin', compact('search', 'intern'));
-                }
+                return view('admin.services.pengajuan-magang-admin', compact('search', 'intern'));
+
             }
         }else{
             return view('landing.services.pengajuan-magang');

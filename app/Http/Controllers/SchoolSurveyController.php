@@ -17,17 +17,12 @@ class SchoolSurveyController extends Controller
             if(str_ends_with($user->email, '@polimedia.ac.id')) {
                 $search = $request->input('search');
                 $school = SchoolSurvey::when($search, function ($query, $search){
-
                     return $query->where('school_name', 'like', '%' . $search . '%')
                                 ->orWhereDate('date_visit', 'like', '%' . $search . '%');
-                })->get();
+                })->paginate(10);
 
-                if(!$search && null){
-                    $school = SchoolSurvey::all();
-                    return view('admin.services.survey.school.index', compact('intern'));
-                } else {
-                    return view('admin.services.survey.school.index', compact('search', 'school'));
-                }
+                return view('admin.services.survey.school.index', compact('search', 'school'));
+
             }
         }else{
             $value = new SurveyValue();

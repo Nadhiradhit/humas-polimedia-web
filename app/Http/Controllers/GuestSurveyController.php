@@ -6,6 +6,8 @@ use App\Models\GuestSurvey;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class GuestSurveyController extends Controller
 {
@@ -18,14 +20,10 @@ class GuestSurveyController extends Controller
                 $search = $request->input('search');
                 $guest = GuestSurvey::when($search, function ($query, $search){
                     return $query->where('guest_name', 'like', '%' . $search . '%');
-                })->get();
+                })->paginate(10);
 
-                if(!$search && null){
-                    $guest = GuestSurvey::all();
-                    return view('admin.services.survey.guest.index', compact('guest'));
-                }else{
-                    return view('admin.services.survey.guest.index', compact('search', 'guest'));
-                }
+                return view('admin.services.survey.guest.index', compact('search', 'guest'));
+
             }
         }
         else{

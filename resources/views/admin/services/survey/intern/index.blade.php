@@ -3,7 +3,7 @@
 @extends('components.layouts.admin-layout')
 
 @section('content')
-<div class="w-full h-screen p-8 border-2 shadow-md border-secondary rounded-xl bg-slate-50">
+<div class="w-full h-full p-8 border-2 shadow-md border-secondary rounded-xl bg-slate-50">
     <h1 class="text-4xl font-bold">Data Survey Kepuasan Magang</h1>
     {{-- <p>Total Data : {{ $data->count() }}</p> --}}
     <div class="flex py-4 lg:justify-end">
@@ -48,5 +48,6 @@
             </tbody>
         </table>
     </div>
+    {{ $intern->appends(['search' => $search])->links() }}
 </div>
 @endsection

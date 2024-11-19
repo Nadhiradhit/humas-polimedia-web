@@ -3,7 +3,7 @@
 @extends('components.layouts.admin-layout')
 
 @section('content')
-<div class="w-full h-screen p-8 border-2 shadow-md border-secondary rounded-xl bg-slate-50">
+<div class="w-full h-full p-8 border-2 shadow-md border-secondary rounded-xl bg-slate-50">
     <h1 class="text-4xl font-bold">Data Pengajuan Kunjungan Sekolah</h1>
     <div class="flex py-4 lg:justify-end">
         <form action="/dashboard/kunjungan-sekolah" method="GET">
@@ -60,5 +60,6 @@
             </tbody>
         </table>
     </div>
+    {{ $school->appends(['search' => $search])->links() }}
 </div>
 @endsection

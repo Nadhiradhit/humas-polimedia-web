@@ -18,15 +18,12 @@ class SchoolVisitController extends Controller
             if(str_ends_with($user->email, '@polimedia.ac.id')){
                 $search = $request->input('search');
                 $school = SchoolVisit::when($search, function($query, $search){
-                    return $query->where('school_name', 'like', '%' .$search. '%');
-                })->get();
+                    return $query->where('school_name', 'like', '%' .$search. '%')
+                            ->orWhereDate('time_visit', 'like', '%' . $search . '%');;
+                })->paginate(10);
 
-                if(!$search && null){
-                    $school = SchoolVisit::all();
-                    return view('admin.services.pengajuan-sekolah-admin')->with('data', $school);
-                } else {
-                    return view('admin.services.pengajuan-sekolah-admin', compact('search', 'school'));
-                }
+                return view('admin.services.pengajuan-sekolah-admin', compact('search', 'school'));
+
             }
         }
         return view('landing.services.kunjungan-sekolah');

@@ -56,5 +56,9 @@ Route::prefix('dashboard')->middleware(AdminMiddleware::class)->group(function (
     // Survey Sekolah Routes
     Route::resource('/survey-kepuasan-sekolah', SchoolSurveyController::class)->name('index', 'admin.services.survey.school.index');
     Route::get('/survey-kepuasan-sekolah/show/{slug}', [SchoolSurveyController::class, 'show'])->name('admin.services.survey.school.show');
+
+    // Delete User
+    Route::delete('/dashboard/{id}', [AdminController::class, 'destroy'])->name('dashboard.destroy');
+
 });
 

@@ -11,25 +11,13 @@
         <div class="mt-7">
             <h3 class="text-xl font-bold">Stats Layanan</h3>
             <div class="flex flex-col gap-4 mt-4 lg:flex-row">
-                <div class="w-full gap-4 py-4 shadow h-96 bg-slate-50 rounded-xl">
+                <div class="w-full gap-4 py-4 shadow bg-slate-50 rounded-xl">
                     <div class="p-4">
                         @foreach ($school_visit as $item)
                         <div>
                             <p class="text-2xl font-bold">{{ $item->count() }}</p>
                         </div>
                         <h6 class="pt-6 font-semibold text-md">Data Layanan Kunjungan Sekolah</h6>
-                        <div class="pt-4 overflow-x-auto">
-                            <table class="table w-full table-primary">
-                                <thead>
-                                    <th>School Name</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{ $item-> school_name}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                         @endforeach
                     </div>
                 </div>

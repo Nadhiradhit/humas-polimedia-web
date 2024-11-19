@@ -15,6 +15,11 @@
     @include('components.actions.alert')
     @yield('content')
 
+
+    {{-- Icons --}}
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -23,6 +28,29 @@
                 notifToast.classList.add('hidden');
             }, 3000);
         })
+
+        function togglePassword(){
+            const passwordField = document.getElementById('password');
+            const icon = document.querySelector('ion-icon');
+
+            if(passwordField.type === 'password'){
+                passwordField.type = 'text';
+                icon.name = 'eye-outline';
+            }else {
+                passwordField.type = 'password';
+                icon.name = 'eye-off-outline';
+            }
+        }
+
+        function appendEmail(){
+            const emailInput = document.getElementById('email');
+            const domain = "@polimedia.ac.id";
+
+            if(!emailInput.value.includes(domain)){
+                emailInput.value = emailInput.value.split('@')[0] + domain;
+            }
+        }
+
     </script>
 </body>
 </html>

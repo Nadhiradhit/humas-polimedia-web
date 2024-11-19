@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\GuestSurvey;
 use App\Models\SchoolVisit;
+use Illuminate\Support\Str;
 use App\Models\InternSurvey;
 use App\Models\SchoolIntern;
 use App\Models\SchoolSurvey;
@@ -24,7 +25,7 @@ class AdminController extends Controller
 
     public function create(){
 
-        $data = User::all();
+        $data = User::paginate(5);
 
         return view('admin.create-user')->with('data', $data);
     }
@@ -46,4 +47,27 @@ class AdminController extends Controller
 
         return redirect()->route('admin.dashboard')->with('success', 'Akun Humas Berhasil Dibuat');
     }
+
+    public function destroy(string $id){
+
+        User::where('id', $id)->delete();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Data akun humas berhasil dihapus');
+    }
+
+
+    //     public function resetPassword($id)
+    // {
+    //     $user = User::findOrFail($id);
+
+    //     // Generate random password
+    //     $newPassword = Str::random(8);
+    //     $user->password = Hash::make($newPassword);
+    //     $user->save();
+
+    //     // Optional: Send the new password via email
+    //     // Mail::to($user->email)->send(new PasswordResetMail($newPassword));
+
+    //     return redirect()->back()->with('success', "Password reset successfully! New password: $newPassword");
+    // }
 }

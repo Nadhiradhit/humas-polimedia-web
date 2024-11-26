@@ -107,7 +107,7 @@
 
                             @foreach($programs as $program)
                             <div class="flex items-center">
-                                <x-forms.form-checkbox name="request_program" value="{{ $program }}" id="program_{{ $loop->index }}" />
+                                <x-forms.form-checkbox name="request_program[]" value="{{ $program }}" id="program_{{ $loop->index }}" />
                                 <label for="program_{{ $loop->index }}" class="ml-2 text-gray-700">{{ $program }}</label>
                             </div>
                             @endforeach
@@ -115,7 +115,7 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Narahubung</span>
+                            <span class="text-lg font-semibold">Penanggung Jawab Sekolah</span>
                         </label>
                         <x-forms.form-input name="contact_person" id="contact_person" type="text" placeholder="Tuliskan Narahubung" />
                     </div>
@@ -127,21 +127,23 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Informasi Lainnya</span>
+                            <span class="text-lg font-semibold">Kebutuhan Informasi</span>
                         </label>
-                        <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
-                            <div class="flex items-center">
-                                <x-forms.form-radio name="more_information" id="more_information" value="Informasi Penerimaan Mahasiswa Baru (PMB)" />
-                                <span class="ml-2">Informasi Penerimaan Mahasiswa Baru (PMB)</span>
-                            </div>
-                            <div class="flex items-center">
-                                <x-forms.form-radio name="more_information" id="more_information" value="TeFa" />
-                                <span class="ml-2">TeFa</span>
-                            </div>
-                            <div class="flex items-center">
-                                <x-forms.form-radio name="more_information" id="more_information" value="Sarpras" />
-                                <span class="ml-2">Sarpras</span>
-                            </div>
+                        <div class="mt-2 space-y-4">
+                            @php
+                                $informations = [
+                                    'Informasi Penerimaan Mahasiswa Baru (PMB)',
+                                    'TeFa',
+                                    'Sarpras',
+                                    'Informasi Beasiswa',
+                                ]
+                            @endphp
+                            @foreach ($informations as  $information)
+                                <div class="flex items-center">
+                                    <x-forms.form-checkbox name="more_information[]" value={{$information}} id="information_{{ $loop->index }}"/>
+                                    <label for="information_{{ $loop->index }}" class="ml-2 text-gray-700">{{$information}}</label>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <x-button.button class="w-full md:w-72">
@@ -151,4 +153,7 @@
             </div>
         </div>
     </div>
+    <script>
+        const requestProgramsSelected =
+    </script>
 </x-layouts.app-layout>

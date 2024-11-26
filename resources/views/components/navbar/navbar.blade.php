@@ -13,7 +13,7 @@
             </li>
             <li>
                 <details onclick="toggleDetails(event)">
-                    <summary>Layanan</summary>
+                    <summary>Daftar</summary>
                         <ul class="w-56 p-2">
                             <li><a href="{{ route('landing.kunjungan-sekolah')}}">Pengajuan Kunjungan Sekolah</a></li>
                             <li><a href="{{ route('landing.pengajuan-magang')}}">Pengajuan Magang</a></li>
@@ -67,7 +67,7 @@
                 </li>
                 <li>
                     <details onclick="toggleDetails(event)">
-                        <summary class="text-4xl font-bold cursor-pointer">Layanan</summary>
+                        <summary class="text-4xl font-bold cursor-pointer">Daftar</summary>
                         <ul class="pl-4 space-y-1 text-2xl">
                             <li><a href="{{ route('landing.kunjungan-sekolah') }}">Pengajuan Kunjungan Sekolah</a></li>
                             <li><a href="{{ route('landing.pengajuan-magang') }}">Pengajuan Magang</a></li>

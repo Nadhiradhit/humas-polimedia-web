@@ -70,7 +70,7 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
-                            <span class="text-lg font-semibold">Narahubung</span>
+                            <span class="text-lg font-semibold">Penanggung Jawab</span>
                         </label>
                         <x-forms.form-input name="contact_person" id="contact_person" type="text" placeholder="Tuliskan guru pendamping sekolah" required/>
                     </div>

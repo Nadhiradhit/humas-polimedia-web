@@ -7,7 +7,7 @@
             <div class="flex space-x-4">
                 <p class="w-24 p-2 text-center text-slate-950 bg-gray-200 font-bold border-[3px] rounded-full border-slate-950">Humas</p>
                 <p class="w-32 p-2 text-center text-slate-950 font-bold bg-red-200 border-[3px] rounded-full border-slate-950">Polimedia</p>
-                <p class="w-44 p-2 text-center text-slate-950 font-bold bg-slate-50 border-[3px] rounded-full border-slate-950">Hubungi Kamu</p>
+                <p class="w-44 p-2 text-center text-slate-950 font-bold bg-slate-50 border-[3px] rounded-full border-slate-950">Hubungi Kami</p>
             </div>
             <div class="flex flex-col pt-12">
                 <h2 class="text-6xl font-bold text-slate-900">Hubungi Kami</h2>
@@ -22,7 +22,7 @@
                             <h2 class="text-xl font-semibold ">Whatsapp Center</h2>
                         </div>
                         <div class="collapse-content">
-                            <p class="text-lg font-medium">0812345678909876543</p>
+                            <p class="text-lg font-medium">0811-1669-695</p>
                         </div>
                 </div>
                 <div class="border-2 border-red-500 collapse collapse-arrow">
@@ -53,10 +53,10 @@
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="flex flex-col items-center justify-center w-full col-span-3 md:col-span-2 h-96 rounded-2xl bg-accent border-slate-950 border-[3px]">
+            <div class="flex flex-col items-center justify-center w-full col-span-3 md:col-span-2 h-96 rounded-2xl bg-blue-200 border-slate-950 border-[3px]">
                 <div class="flex items-center gap-2">
                     <ion-icon name="location-outline" size="large"></ion-icon>
-                    <h1 class="text-4xl font-bold">Lokasi Kami</h1>
+                    <h1 class="text-6xl font-bold">Lokasi Kami</h1>
                 </div>
                 <p class="pt-4 font-semibold text-center text-md">Jl. Srengseng Sawah Raya No.17, RT.8/RW.3, Srengseng Sawah, Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630</p>
             </div>

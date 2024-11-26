@@ -52,12 +52,12 @@ class InternController extends Controller
             'accompaying_teacher' => 'required',
             'submision_date' => 'required',
             'contact_person' => 'required',
-            'letter_intership' => 'required|file|mimes:jpg,png,pdf,docx|max:2048',
+            'letter_intership' => 'required|file|mimes:jpg,png,pdf,docx|max:5048',
         ]);
 
         $letter_file = $request->file('letter_intership');
         $file_ext = $letter_file->extension();
-        $file_slug = Str::of($request->school_name);
+        $file_slug = Str::of($request->name_school);
         $file_name = 'Surat Magang' . ' ' . $file_slug . '.' . $file_ext;
         $letter_file->move(public_path('storage/letter/intern'), $file_name);
 

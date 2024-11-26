@@ -37,10 +37,12 @@
                         <td>{{ $item->name_school  }}</td>
                         <td>{{ $item->total_student . ' Siswa' }}</td>
                         <td>
-                            <ul>
+                            <ul class="list-decimal">
                                 @foreach ($item->name_student as $student_name )
                                     <li>
-                                        {{ $student_name }}
+                                        <span class="font-semibold">
+                                            {{ $student_name }}
+                                        </span>
                                     </li>
                                 @endforeach
                             </ul>

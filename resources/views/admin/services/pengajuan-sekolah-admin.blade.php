@@ -39,7 +39,9 @@
                         <td>{{ $item->student_class }}</td>
                         <td>{{ $item->total_teacher }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->submision_date)->format('l, F jS Y ') }}</td>
-                        <td>{{ $item->request_program}}</td>
+                        <td>
+                            {{ $item->request_program}}
+                        </td>
                         <td>{{ $item->more_information }}</td>
                         <td>{{ $item->contact_person }}</td>
                         <td>

@@ -59,7 +59,7 @@
                             <label class="label">
                                 <span class="text-lg font-semibold">Guru Pendamping</span>
                             </label>
-                            <x-forms.form-input name="accompaying_teacher" id="accompaying_teacher" type="text" placeholder="Tuliskan guru pendamping sekolah" required/>
+                            <x-forms.form-input name="accompaying_teacher" id="accompaying_teacher" type="text" placeholder="Tuliskan nama guru pendamping sekolah" required/>
                         </div>
                     </div>
                     <div class="w-full form-control">
@@ -72,7 +72,7 @@
                         <label class="label">
                             <span class="text-lg font-semibold">Penanggung Jawab Magang Siswa</span>
                         </label>
-                        <x-forms.form-input name="contact_person" id="contact_person" type="text" placeholder="Tuliskan guru pendamping sekolah" required/>
+                        <x-forms.form-input name="contact_person" id="contact_person" type="text" placeholder="Tuliskan nama penanggung jawab magang" required/>
                     </div>
                     <div class="w-full form-control">
                         <label class="label">

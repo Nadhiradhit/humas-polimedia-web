@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="{{ url('assets/images/polimedia-logo.png')}}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+    <script src="{{ asset('build/assets/app.js') }}" defer></script>
     <title>@yield('title')</title>
 </head>
 <body class="w-full px-6 mx-auto md:px-10 max-w-screen-3xl font-plusJakarta">

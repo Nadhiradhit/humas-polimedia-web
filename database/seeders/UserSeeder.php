@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Humas Polimedia',
             'email' => 'Humas@polimedia.ac.id',
-            'password' => Hash::make('@HumasPolimedia123'),
+            'password' => Hash::make('admin123'),
         ]);
     }
 }

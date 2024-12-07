@@ -48,6 +48,6 @@
             </tbody>
         </table>
     </div>
-    {{ $intern->appends(['search' => $search])->links() }}
+    {{ $guest->appends(['search' => $search])->links() }}
 </div>
 @endsection

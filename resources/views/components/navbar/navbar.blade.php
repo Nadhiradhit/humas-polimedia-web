@@ -1,7 +1,9 @@
 <nav class="relative justify-between gap-10 py-8 my-6 text-base bg-purple-100 rounded-full shadow navbar">
     <div class="flex pl-4 space-x-4">
         <img src="../assets/images/polimedia-logo.png" width="32" alt="">
-        <h4 class="text-lg font-bold">Humas Polimedia</h4>
+        <a href="{{ route('auth.login')}}">
+            <h4 class="text-lg font-bold">Humas Polimedia</h4>
+        </a>
     </div>
 
     <div class="hidden pr-4 space-x-4 lg:flex">

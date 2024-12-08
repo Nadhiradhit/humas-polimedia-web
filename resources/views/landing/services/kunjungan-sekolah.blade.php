@@ -87,6 +87,8 @@
 
                             @php
                                 $programs = [
+                                    'PSDKU Medan',
+                                    'PSDKU Makassar',
                                     'D4 Teknologi Rekayasa Pengemasan',
                                     'D4 Teknologi Rekayasa Multimedia',
                                     'D4 Teknologi Permainan',

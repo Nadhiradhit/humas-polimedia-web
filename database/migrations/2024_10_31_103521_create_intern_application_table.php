@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('student_class',20);
             $table->string('accompaying_teacher', 100);
             $table->date('submision_date');
+            $table->string('intern_time')->default('Durasi Tidak Ditentukan');
             $table->string('contact_person', 100);
             $table->string('slug');
             $table->string('letter_intership');

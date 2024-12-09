@@ -36,6 +36,7 @@ class InternSurveyController extends Controller
         $request->validate([
             'school_name' => 'required',
             'intern_time' => 'required',
+            'intern_place' => 'required',
             'question_1' => 'required',
             'question_2' => 'required',
             'question_3' => 'required',
@@ -48,6 +49,7 @@ class InternSurveyController extends Controller
         InternSurvey::create([
             'school_name' => $request->input('school_name'),
             'intern_time' => $request->input('intern_time'),
+            'intern_place' => $request->input('intern_place'),
             'question_1' => $request->input('question_1'),
             'question_2' => $request->input('question_2'),
             'question_3' => $request->input('question_3'),

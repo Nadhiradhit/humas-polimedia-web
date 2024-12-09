@@ -11,6 +11,7 @@ class InternSurvey extends Model
     protected $fillable = [
         'school_name',
         'intern_time',
+        'intern_place',
         'question_1',
         'question_2',
         'question_3',

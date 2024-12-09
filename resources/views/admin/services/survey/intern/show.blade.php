@@ -42,7 +42,7 @@
                         @foreach ($options as $option)
                             <div class="flex items-center">
 
-                                <input type="radio" class="radio radio-mark" name="{{ $questionName }}" value="{{ $option }}"
+                                <input type="radio" class="radio radio-marked" name="{{ $questionName }}" value="{{ $option }}"
                                     disabled {{ $data->$questionName == $option ? 'checked' : '' }} />
                                 <span class="ml-2">{{ $option }}</span>
                             </div>

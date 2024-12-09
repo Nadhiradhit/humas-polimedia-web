@@ -90,7 +90,11 @@ class SchoolVisitController extends Controller
 
     public function destroy(string $id){
         $data = SchoolVisit::where('id', $id)->first();
-        File::delete(public_path('storage/letter/visit' . $data->cover));
+
+        $filePath = public_path('storage/letter/visit' . $data->letter_visit);
+        if (File::exists($filePath)) {
+            File::delete($filePath);
+        }
 
         SchoolVisit::where('id', $id)->delete();
         return redirect()->route('admin.services.pengajuan-sekolah')->with('success', 'Data berhasil dihapus');

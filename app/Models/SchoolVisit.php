@@ -25,4 +25,5 @@ class SchoolVisit extends Model
         'more_information',
         'slug'
     ];
+
 }

@@ -24,6 +24,7 @@
                         'Kunjungan ke beberapa tempat di Polimedia seperti kunjungan ke Perpustakaan, Laboratorium, Laboritarium Cetak, dsb membuat saya lebih memahami konsep industri kreatif' => 'question_5',
                         'Panitia penerimaan sangat ramah dan melayani dengan baik' => 'question_6',
                         'Durasi kunjungan sangat cukup untuk mendapatkan informasi baru tentang Polimedia' => 'question_7',
+                        'Setelah kunjungan ini apakah anda akan memilih Polimedia sebagai tempat kuliah' => 'question_8'
                     ];
                     $options = [
                         'Sangat Tidak Setuju',
@@ -42,7 +43,7 @@
                         @foreach ($options as $option)
                             <div class="flex items-center">
 
-                                <input type="radio" class="radio radio-mark" name="{{ $questionName }}" value="{{ $option }}"
+                                <input type="radio" class="radio radio-marked " name="{{ $questionName }}" value="{{ $option }}"
                                     disabled {{ $data->$questionName == $option ? 'checked' : '' }} />
                                 <span class="ml-2">{{ $option }}</span>
                             </div>

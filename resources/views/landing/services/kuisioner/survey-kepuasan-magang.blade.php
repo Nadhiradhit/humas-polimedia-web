@@ -23,6 +23,24 @@
                         </label>
                         <x-forms.form-input name="intern_time" id="intern_time" type="text" placeholder="Tuliskan durasi pelaksanaan magang" />
                     </div>
+                    @php
+                        $internPlace = [
+                            'Humas' => 'Humas',
+                            'BAKPK' => 'BAKPK',
+                            'Kepegawaian' => 'Kepegawaian',
+                            'Laboratorium' => 'Laboratorium',
+                            'Jurusan' => 'Jurusan',
+                            'UPT TIK' => 'UPT TIK',
+                            'UPT Percetakan' => 'UPT Percetakan',
+                            'Lainnya' => 'Lainnya',
+                        ]
+                    @endphp
+                    <div class="w-full form-control">
+                        <label class="label">
+                            <span class="text-lg font-semibold">Tempat Pelaksanaan Magang Di Polimedia</span>
+                        </label>
+                        <x-forms.form-select name="intern_place" id="intern_place" :options="$internPlace" placeholder="Pilih tempat pelaksanaan magang"/>
+                    </div>
                     <div class="w-full form-control">
                         <label class="label">
                             <span class="text-lg font-semibold">
@@ -34,7 +52,7 @@
                                 $i = [
                                     'Sangat Tidak Setuju',
                                     'Tidak Setuju',
-                                    'Netral',
+                                    'Netral/Ragu-Ragu',
                                     'Setuju',
                                     'Sangat Setuju',
                                 ];
@@ -59,7 +77,7 @@
                             $i = [
                                 'Sangat Tidak Setuju',
                                 'Tidak Setuju',
-                                'Netral',
+                                'Netral/Ragu-Ragu',
                                 'Setuju',
                                 'Sangat Setuju',
                             ];
@@ -83,7 +101,7 @@
                                 $i = [
                                     'Sangat Tidak Setuju',
                                     'Tidak Setuju',
-                                    'Netral',
+                                    'Netral/Ragu-Ragu',
                                     'Setuju',
                                     'Sangat Setuju',
                                 ]
@@ -107,7 +125,7 @@
                                 $i = [
                                     'Sangat Tidak Setuju',
                                     'Tidak Setuju',
-                                    'Netral',
+                                    'Netral/Ragu-Ragu',
                                     'Setuju',
                                     'Sangat Setuju',
                                 ];
@@ -131,7 +149,7 @@
                                 $i = [
                                     'Sangat Tidak Setuju',
                                     'Tidak Setuju',
-                                    'Netral',
+                                    'Netral/Ragu-Ragu',
                                     'Setuju',
                                     'Sangat Setuju',
                                 ];
@@ -155,7 +173,7 @@
                             $i = [
                                 'Sangat Tidak Setuju',
                                 'Tidak Setuju',
-                                'Netral',
+                                'Netral/Ragu-Ragu',
                                 'Setuju',
                                 'Sangat Setuju',
                             ];
@@ -179,7 +197,7 @@
                             $i = [
                                 'Sangat Tidak Setuju',
                                 'Tidak Setuju',
-                                'Netral',
+                                'Netral/Ragu-Ragu',
                                 'Setuju',
                                 'Sangat Setuju',
                             ];
@@ -199,4 +217,7 @@
             </div>
         </div>
     </div>
+    <script>
+
+    </script>
 </x-layouts.app-layout>

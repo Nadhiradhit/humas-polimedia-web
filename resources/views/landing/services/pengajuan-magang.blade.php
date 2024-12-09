@@ -70,6 +70,12 @@
                     </div>
                     <div class="w-full form-control">
                         <label class="label">
+                            <span class="text-lg font-semibold">Berapa Lama Durasi Magang</span>
+                        </label>
+                        <x-forms.form-input name="intern_time" id="intern_time" type="text" placeholder="Tuliskan durasi magang" required/>
+                    </div>
+                    <div class="w-full form-control">
+                        <label class="label">
                             <span class="text-lg font-semibold">Penanggung Jawab Magang Siswa</span>
                         </label>
                         <x-forms.form-input name="contact_person" id="contact_person" type="text" placeholder="Tuliskan nama penanggung jawab magang" required/>

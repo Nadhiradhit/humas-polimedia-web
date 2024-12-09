@@ -17,6 +17,7 @@ class SchoolSurvey extends Model
         'question_5',
         'question_6',
         'question_7',
+        'question_8',
         'slug',
     ];
 }

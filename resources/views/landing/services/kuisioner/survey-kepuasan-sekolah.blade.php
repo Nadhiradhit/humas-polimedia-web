@@ -13,6 +13,12 @@
                     @csrf
                     <div class="w-full form-control">
                         <label class="label">
+                            <span class="text-lg font-semibold">Nama</span>
+                        </label>
+                        <x-forms.form-input name="name" id="name" type="text" placeholder="Tuliskan nama" />
+                    </div>
+                    <div class="w-full form-control">
+                        <label class="label">
                             <span class="text-lg font-semibold">Nama Sekolah</span>
                         </label>
                         <x-forms.form-input name="school_name" id="school_name" type="text" placeholder="Tuliskan asal sekolah" />
@@ -34,7 +40,7 @@
                                 $i = [
                                     'Sangat Tidak Setuju',
                                     'Tidak Setuju',
-                                    'Netral',
+                                    'Netral/Ragu-Ragu',
                                     'Setuju',
                                     'Sangat Setuju',
                                 ];
@@ -59,7 +65,7 @@
                             $i = [
                                 'Sangat Tidak Setuju',
                                 'Tidak Setuju',
-                                'Netral',
+                                'Netral/Ragu-Ragu',
                                 'Setuju',
                                 'Sangat Setuju',
                             ];
@@ -83,7 +89,7 @@
                                 $i = [
                                     'Sangat Tidak Setuju',
                                     'Tidak Setuju',
-                                    'Netral',
+                                    'Netral/Ragu-Ragu',
                                     'Setuju',
                                     'Sangat Setuju',
                                 ]
@@ -107,7 +113,7 @@
                                 $i = [
                                     'Sangat Tidak Setuju',
                                     'Tidak Setuju',
-                                    'Netral',
+                                    'Netral/Ragu-Ragu',
                                     'Setuju',
                                     'Sangat Setuju',
                                 ];
@@ -131,7 +137,7 @@
                                 $i = [
                                     'Sangat Tidak Setuju',
                                     'Tidak Setuju',
-                                    'Netral',
+                                    'Netral/Ragu-Ragu',
                                     'Setuju',
                                     'Sangat Setuju',
                                 ];
@@ -155,7 +161,7 @@
                             $i = [
                                 'Sangat Tidak Setuju',
                                 'Tidak Setuju',
-                                'Netral',
+                                'Netral/Ragu-Ragu',
                                 'Setuju',
                                 'Sangat Setuju',
                             ];
@@ -179,7 +185,7 @@
                                 $i = [
                                 'Sangat Tidak Setuju',
                                 'Tidak Setuju',
-                                'Netral',
+                                'Netral/Ragu-Ragu',
                                 'Setuju',
                                 'Sangat Setuju',
                                 ];
@@ -187,6 +193,30 @@
                             @foreach ($surveyValue as $item)
                                 <div class="flex items-center">
                                         <x-forms.form-radio name="question_7" id="question_7_{{ $index }}" value="{{ $i[$index] }}" />
+                                        <span class="ml-2">{{ $item }}</span>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="w-full form-control">
+                        <label class="label">
+                            <span class="text-lg font-semibold">
+                                Setelah kunjungan ini apakah anda akan memilih Polimedia sebagai tempat kuliah
+                            </span>
+                        </label>
+                        <div class="flex flex-col gap-4 lg:space-x-4 md:flex-row">
+                            @php
+                                $i = [
+                                'Sangat Tidak Setuju',
+                                'Tidak Setuju',
+                                'Netral',
+                                'Setuju',
+                                'Sangat Setuju',
+                                ];
+                            @endphp
+                            @foreach ($surveyValue as $item)
+                                <div class="flex items-center">
+                                        <x-forms.form-radio name="question_8" id="question_8_{{ $index }}" value="{{ $i[$index] }}" />
                                         <span class="ml-2">{{ $item }}</span>
                                 </div>
                             @endforeach

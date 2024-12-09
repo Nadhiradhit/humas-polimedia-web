@@ -44,6 +44,7 @@ class SchoolSurveyController extends Controller
             'question_5' => 'required',
             'question_6' => 'required',
             'question_7' => 'required',
+            'question_8' => 'required',
         ]);
 
         SchoolSurvey::create([
@@ -56,6 +57,7 @@ class SchoolSurveyController extends Controller
             'question_5' => $request->input('question_5'),
             'question_6' => $request->input('question_6'),
             'question_7' => $request->input('question_7'),
+            'question_8' => $request->input('question_8'),
             'slug' => Str::of($request->input('school_name'))->slug('-'),
         ]);
 

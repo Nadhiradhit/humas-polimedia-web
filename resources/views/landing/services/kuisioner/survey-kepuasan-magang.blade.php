@@ -1,4 +1,4 @@
-@section('title', 'Survey Kepuasaan Magang')
+@section('title', 'Survei Kepuasaan Magang')
 
 <x-layouts.app-layout>
     <div class="flex flex-col mb-8 border-2 bg-slate-50 rounded-2xl border-primary">
@@ -6,7 +6,7 @@
             <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full rounded-t-2xl h-[20rem] lg:h-[30rem] ">
         </div>
         <div class="px-8 py-4 text-slate-950">
-            <h3 class="text-2xl font-bold">Form Kepuasan Magang</h3>
+            <h3 class="text-2xl font-bold">Form Survei Kepuasan Magang</h3>
             <p class="text-lg font-semibold text-secondary">Survei ini dilakukan untuk mengetahui kepuasan Bapak/Ibu/Siswa/i terhadap pelayanan Humas  Polimedia. Kami sangat mengharapkan kerjasama dari Bapak/Ibu/Siswa/i untuk mengisi dan menjawab setiap pertanyaan yang diajukan. Atas perhatiannya kami ucapkan terima kasih.</p>
             <div class="pt-4">
                 <form action="{{ route('intern.survey.store') }}" method="POST" enctype="multipart/form-data">

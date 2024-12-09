@@ -35,20 +35,20 @@
             </li>
             <li>
                 <button @click="openDropdown = openDropdown === 2 ? null : 2" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-200 hover:rounded-lg">
-                    <span>Survey</span>
+                    <span>Survei</span>
                     <svg :class="{ 'transform rotate-180': openDropdown === 2 }" class="w-4 h-4 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                     </svg>
                 </button>
                 <ul x-show="openDropdown === 2" class="mt-2 space-y-2">
                     <li class="px-4 py-2">
-                        <a href="{{ route('admin.services.survey.school.index')}}" class="block">Survey Kunjungan Sekolah</a>
+                        <a href="{{ route('admin.services.survey.school.index')}}" class="block">Survei Kepuasan Kunjungan Sekolah</a>
                     </li>
                     <li class="px-4 py-2">
-                        <a href="{{ route('admin.services.survey.guest.index')}}" class="block">Survey Tamu</a>
+                        <a href="{{ route('admin.services.survey.guest.index')}}" class="block">Survei Kepuasan Tamu</a>
                     </li>
                     <li class="px-4 py-2">
-                        <a href="{{ route('admin.services.survey.intern.index')}}" class="block">Survey Magang</a>
+                        <a href="{{ route('admin.services.survey.intern.index')}}" class="block">Survei Kepuasan Magang</a>
                     </li>
                 </ul>
             </li>

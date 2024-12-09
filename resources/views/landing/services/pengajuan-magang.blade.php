@@ -6,7 +6,7 @@
             <img src="../assets/images/campus-polimedia.jpg" alt="kampus-polimedia-img" class="w-full rounded-t-2xl h-[20rem] lg:h-[30rem] ">
         </div>
         <div class="px-8 py-4 text-slate-950">
-            <h3 class="text-2xl font-bold">Form Pengajuan Magang</h3>
+            <h3 class="text-2xl font-bold">Form Pengajuan Magang Sekolah</h3>
             <p class="text-lg font-semibold text-secondary">Harap di isi dengan lengkap dan sesuai pada form ini!</p>
             <div class="pt-4">
                 <form action="{{ route('intern.store') }}" method="POST" enctype="multipart/form-data">

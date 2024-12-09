@@ -18,17 +18,17 @@
                     <summary>Daftar</summary>
                         <ul class="w-56 p-2">
                             <li><a href="{{ route('landing.kunjungan-sekolah')}}">Pengajuan Kunjungan Sekolah</a></li>
-                            <li><a href="{{ route('landing.pengajuan-magang')}}">Pengajuan Magang</a></li>
+                            <li><a href="{{ route('landing.pengajuan-magang')}}">Pengajuan Magang Sekolah</a></li>
                         </ul>
                 </details>
             </li>
             <li>
                 <details onclick="toggleDetails(event)">
-                    <summary>Survey Kepuasaan</summary>
+                    <summary>Survei Kepuasaan</summary>
                         <ul class="w-56 p-2">
-                            <li><a href="{{ route('landing.survey-kepuasan-sekolah') }}">Kunjungan Sekolah</a></li>
-                            <li><a href="{{ route('landing.survey-kepuasan-tamu') }}">Tamu</a></li>
-                            <li><a href="{{ route('landing.survey-kepuasan-magang') }}">Magang</a></li>
+                            <li><a href="{{ route('landing.survey-kepuasan-sekolah') }}">Survei Kunjungan Sekolah</a></li>
+                            <li><a href="{{ route('landing.survey-kepuasan-tamu') }}">Survei Kepuasan Tamu</a></li>
+                            <li><a href="{{ route('landing.survey-kepuasan-magang') }}">Survei Kepuasan Magang</a></li>
                         </ul>
                 </details>
             </li>

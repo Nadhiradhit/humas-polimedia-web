@@ -26,6 +26,7 @@
                 <th>Student Class</th>
                 <th>Teacher</th>
                 <th>Submit Date</th>
+                <th>Intern Duration</th>
                 <th>Contact Person</th>
                 <th>Letter</th>
                 <th>Action</th>
@@ -51,6 +52,7 @@
                         <td>{{ $item->student_class }}</td>
                         <td>{{ $item->accompaying_teacher }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->submision_date)->format('l, F jS Y ') }}</td>
+                        <td>{{ $item->intern_time}}</td>
                         <td>{{ $item->contact_person }}</td>
                         <td>
                             <a href="{{ asset('storage/letter/intern/' . $item->letter_intership) }}" target="_blank" >

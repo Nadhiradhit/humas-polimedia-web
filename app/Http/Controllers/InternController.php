@@ -32,6 +32,7 @@ class InternController extends Controller
     }
 
     public function store(Request $request){
+
         Session::flash('name_school', $request->name_school);
         Session::flash('total_student', $request->total_student);
         Session::flash('name_student', $request->name_student);
@@ -39,6 +40,7 @@ class InternController extends Controller
         Session::flash('student_class', $request->student_class);
         Session::flash('accompaying_teacher', $request->accompaying_teacher);
         Session::flash('submision_date', $request->submision_date);
+        Session::flash('intern_time', $request->intern_time);
         Session::flash('contact_person', $request->contact_person);
 
 
@@ -51,16 +53,24 @@ class InternController extends Controller
             'student_class' => 'required|in:X,XI,XII',
             'accompaying_teacher' => 'required',
             'submision_date' => 'required',
+            'intern_time' => 'required|string',
             'contact_person' => 'required',
             'letter_intership' => 'required|file|mimes:jpg,png,pdf,docx|max:5048',
         ]);
+
+        // dd($request->all());
 
         $letter_file = $request->file('letter_intership');
         $file_ext = $letter_file->extension();
         $file_slug = Str::of($request->name_school);
         $file_name = 'Surat Magang' . ' ' . $file_slug . '.' . $file_ext;
+        // Direct File to Public
         $letter_file->move(public_path('storage/letter/intern'), $file_name);
 
+        // Direct File to Storage
+        // $letter_file->storeAs('letter/intern', $file_name);
+
+        // dd($letter_file);
         $slug = Str::of($request->name_school)->slug('-');
 
         $data = [
@@ -71,10 +81,12 @@ class InternController extends Controller
             'student_class' => $request->student_class,
             'accompaying_teacher' => $request->accompaying_teacher,
             'submision_date' => $request->submision_date,
+            'intern_time' => $request->intern_time,
             'contact_person' => $request->contact_person,
             'letter_intership' => $file_name,
             'slug' => $slug
         ];
+
 
         SchoolIntern::create($data);
 
@@ -84,7 +96,11 @@ class InternController extends Controller
 
     public function destroy(string $id){
         $data = SchoolIntern::where('id', $id)->first();
-        File::delete(public_path('storage/letter/intern' . $data->cover));
+
+        $filePath = public_path('storage/letter/intern/' . $data->letter_intership);
+            if (File::exists($filePath)) {
+                File::delete($filePath);
+            }
 
         SchoolIntern::where('id', $id)->delete();
         return redirect()->route('admin.services.pengajuan-magang')->with('success', 'Data berhasil dihapus');

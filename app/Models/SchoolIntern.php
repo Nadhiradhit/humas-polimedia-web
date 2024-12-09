@@ -19,6 +19,7 @@ class SchoolIntern extends Model
         'student_class',
         'accompaying_teacher',
         'submision_date',
+        'intern_time',
         'contact_person',
         'slug',
         'letter_intership'
